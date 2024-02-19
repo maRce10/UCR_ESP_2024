@@ -10,18 +10,19 @@ format:
 
 <center><font size="4"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> <br></b></font></center>
 
-Este taller pretende profundizar en los elementos de programación computacional, manipulación de bases de datos, diseño experimental, graficación personalizada, y el uso de técnicas y modelaje estadístico avanzadas utilizando R como plataforma. El taller está dirigido a estudiantes avanzados de carrera, de licenciatura o postgrado. En el taller se pretende cubrir las bases de los principales análisis y técnicas de modelaje estadístico, así como análisis emergentes. Todas las semanas se realizarán prácticas de laboratorio en donde se aplicarán los conceptos desarrollados durante las clases de teoría. Además, durante el taller cada estudiante presentará un paquete o extensión (conjunto de herramientas aplicables a análisis específicos) de R, en donde profundizará sobre sus aplicaciones en el campo de la biología demostrando en clase en que consiste el análisis.
+Tradicionalmente, los modelos estadísticos se han enseñado como herramientas desconectadas sin una relación clara entre ellas. Sin embargo, la mayoría de esos modelos estadísticos comunes no son más que casos especiales de modelos lineales. Por lo tanto, aprenderlos como tales puede simplificar mucho las cosas. El curso se centrará en la regresión lineal como principal herramienta para la inferencia estadística. Los estudiantes serán introducidos a los elementos básicos de un modelo de regresión lineal, su interpretación, así como la experiencia práctica en la construcción de esos modelos en R. Este taller se ha impartido como parte del curso de campo de Biología Tropical de la Organización de Estudios Tropicales desde 2022.
 
  
 
 ::: {.alert .alert-info}
 ### **Objetivos** {.unnumbered .unlisted}
 
--   Familiarizar al estudiante con la programación en R
--   Brindar herramientas para la manipulación de bases de datos
--   Emplear métodos de visualización de datos
--   Cubrir algunos de los análisis estadísticos tradicionales
--   Proveer a los estudiantes con experiencia en la aplicación de las herramientas brindadas por medio de prácticas y proyectos de investigación
+- Comprender la inferencia estadística a través de una única herramienta de modelación (regresiones lineales en sentido amplio)
+
+- Familiarizarse con la construcción de modelos lineales
+
+- Extender los modelos lineales a diferentes estructuras de datos
+
 :::
 
  

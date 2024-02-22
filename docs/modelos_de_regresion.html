@@ -167,13 +167,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/maRce10/UCR_ESP_2024/"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text">https://github.com/maRce10/UCR_ESP_2024/</span></a>
-  </li>  
-</ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
@@ -261,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Tradicionalmente, los modelos estadísticos se han enseñado como herramientas desconectadas sin una relación clara entre ellas. Sólo hace falta darle un vistazo a un libro clásico de estadística para biólogos (Sokal &amp; Rolhf):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/sokal_rohlf.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -905,7 +898,7 @@ Regresión lineal simple
 <p>El objetivo más común de una regresión lineal es la estimación de los valores de <span class="math inline">\(\beta_{*}\)</span>. Esto se consigue encontrando la línea recta que mejor se ajusta y que representa la asociación entre un predictor y la respuesta:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/regression.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -927,7 +920,7 @@ Regresión lineal simple
 <p>Por ejemplo, un modelo de regresión con este resultado:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="90%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="90%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/model_betas_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid quarto-figure-center figure-img" style="width:90.0%">
@@ -1001,7 +994,7 @@ Regresión lineal simple
 <p>La función básica de R para construir un modelo lineal es <code>lm()</code>. Veamos los componentes básicos de un modelo de regresión utilizando <code>lm()</code>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lm.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -1197,7 +1190,7 @@ Residual standard error: 0.926 on 49 degrees of freedom</code></pre>
 <p>“<em>Encontramos que un modelo sólo con intercepto (intercept-only model) explicaba mejor las concentraciones de linfocitos y eosinófilos en las aves, indicando que las concentraciones de estos tipos de células eran independientes de la masa corporal.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="85%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="85%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/leukocytes.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid quarto-figure-center figure-img" style="width:85.0%">
@@ -1213,7 +1206,7 @@ Residual standard error: 0.926 on 49 degrees of freedom</code></pre>
 <p><font size="5">Ejercicio 3</font></p>
 <p>&nbsp;</p>
 <ul>
-<li><p>Cambie el argumento ‘mean’ en la llamada de la función “rnorm()` (<a href="#cb53-8">línea 130</a>) por un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</p></li>
+<li><p>Cambie el argumento ‘mean’ en la llamada de la función “rnorm()` en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</p></li>
 <li><p>Cambia el argumento <code>sd</code> en la llamada a la función <code>rnorm()</code> (<a href="#cb53-8">línea 130</a>) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</p></li>
 </ul>
 </div>
@@ -1589,7 +1582,7 @@ x1            2.8900    0.44249  6.5311 3.8537e-08</code></pre>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/duets.png" id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -1602,7 +1595,7 @@ x1            2.8900    0.44249  6.5311 3.8537e-08</code></pre>
 <p>“<em>… la coordinación y la consistencia de los duetos son mayores en las especies con temporadas de apareamiento especialmente largas.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="quarto-figure quarto-figure-center anchored" width="70%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/duet_reg.png" id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
@@ -1802,7 +1795,7 @@ x2           -1.9324    0.41422 -4.6650 2.5851e-05</code></pre>
 <p>“<em>La memoria espacial, el tamaño corporal y el largo de la punta del pico … predijeron positivamente la probabilidad de adquirir y defender un territorio.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lbh_cognition.png" id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2195,7 +2188,7 @@ x1b           1.8140    0.84160  2.1554 3.6172e-02</code></pre>
 <p>“<em>Los machos con puntas de pico más grandes y puntiagudas tuvieron más éxito en ganar control de territorios en el lek.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="quarto-figure quarto-figure-center anchored" width="75%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="75%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/daggers_lbh.png" id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="img-fluid quarto-figure-center figure-img" style="width:75.0%">
@@ -2575,7 +2568,7 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <p>“<em>El aumento de la luz de la luna disminuye la actividad vocal de</em> Agalychnis lemur <em>aunque esta relación es mediada por la temperatura.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="quarto-figure quarto-figure-center anchored" width="70%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lemur.png" id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
@@ -2593,7 +2586,7 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <p>Los ecólogos utilizan habitualmente modelos estadísticos para detectar y explicar interacciones entre factores ecológicos, con el objetivo de evaluar si un efecto de interés cambia de signo o magnitud en distintos contextos. El artículo trata de los peligros de interpretan las interacciones estadísticas sin prestar atención a su propiedad fundamental de simetría, o a la escala de medida, ya sea aditiva o multiplicativa. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939">Acá pueden acceder al artículo</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/interaction.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2825,7 +2818,7 @@ x2          3.51e-16    0.19016 1.8458e-15 1.0000e+00</code></pre>
 <p>“<em>La riqueza de especies de mariposas es de tres a cuatro veces mayor cuando aumenta el hábitat natural en el paisaje circundante (en un radio de 2 km), mientras que la abundancia de mariposas se asociaba negativamente con el aumento del tiempo transcurrido desde el último incendio.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/butterflies.png" id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2848,7 +2841,7 @@ x2          3.51e-16    0.19016 1.8458e-15 1.0000e+00</code></pre>
 <p>Existen muchas otras funciones de distribución y enlace:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/link-functions.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3107,7 +3100,7 @@ x1 -0.003</code></pre>
 <p>“<em>… el tamaño corporal mostró una correlación negativa con la frecuencia baja del canto.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lbh_song_size.png" id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3288,7 +3281,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 <p>La paradoja de Simpson es un fenómeno en estadística en el que una tendencia aparece en varios grupos de datos pero desaparece o se invierte cuando se combinan los grupos. Se ha utilizado para ilustrar el tipo de resultados engañosos que puede generar el ignorar la estructura en los datos y las relaciones causales entre variables.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/simpsons_paradox.gif" id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3307,7 +3300,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 </center>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="quarto-figure quarto-figure-center anchored" width="40%" data-fig-align="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/swiss_knife.png" id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
@@ -4603,7 +4596,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-839"><a href="#cb163-839" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-840"><a href="#cb163-840" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb163-841"><a href="#cb163-841" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-842"><a href="#cb163-842" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambie el argumento 'mean' en la llamada de la función "rnorm()<span class="sc">\`</span> (<span class="co">[</span><span class="ot">línea 130</span><span class="co">](#cb53-8)</span>) por un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</span>
+<span id="cb163-842"><a href="#cb163-842" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambie el argumento 'mean' en la llamada de la función "rnorm()<span class="sc">\`</span> en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</span>
 <span id="cb163-843"><a href="#cb163-843" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-844"><a href="#cb163-844" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambia el argumento <span class="in">`sd`</span> en la llamada a la función <span class="in">`rnorm()`</span> (<span class="co">[</span><span class="ot">línea 130</span><span class="co">](#cb53-8)</span>) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</span>
 <span id="cb163-845"><a href="#cb163-845" aria-hidden="true" tabindex="-1"></a>:::</span>

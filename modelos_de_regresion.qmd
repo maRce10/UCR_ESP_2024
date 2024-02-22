@@ -807,7 +807,7 @@ knitr::include_graphics("./images/leukocytes.png")
 
  
 
--   Cambie el argumento 'mean' en la llamada de la función "rnorm()\` ([línea 130](#cb53-8)) por un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes
+-   Cambie el argumento 'mean' en la llamada de la función "rnorm()\` en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes
 
 -   Cambia el argumento `sd` en la llamada a la función `rnorm()` ([línea 130](#cb53-8)) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes
 :::

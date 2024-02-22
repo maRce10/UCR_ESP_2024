@@ -9,10 +9,10 @@ website:
   site-url: https://marce10.github.io/UCR_ESP_2024/
   repo-url: https://github.com/maRce10/UCR_ESP_2024-
   navbar:
-    right:
-      - icon: github
-        href: https://github.com/maRce10/UCR_ESP_2024/
-        aria-label: GitHub
+    # right:
+    #   - icon: github
+    #     href: https://github.com/maRce10/UCR_ESP_2024/
+    #     aria-label: GitHub
     left:
       - href: index.qmd
         text: " "

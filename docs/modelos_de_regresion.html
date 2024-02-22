@@ -149,10 +149,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Gráficos con ggplot2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos.html">
- <span class="dropdown-text">Reportes dinámicos</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./importar_datos.html">
  <span class="dropdown-text">Importar y exportar datos de R</span></a>
   </li>  
@@ -207,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" id="toc-cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" class="nav-link" data-scroll-target="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas"><span class="header-section-number">4</span> Cómo utilizar datos simulados para entender el comportamiento de las herramientas estadísticas</a>
   <ul class="collapse">
-  <li><a href="#prueba-de-concepto-el-teorema-central-del-límite" id="toc-prueba-de-concepto-el-teorema-central-del-límite" class="nav-link" data-scroll-target="#prueba-de-concepto-el-teorema-central-del-límite"><span class="header-section-number">4.1</span> Prueba de concepto: <em>el Teorema Central del Límite</em></a></li>
+  <li><a href="#prueba-de-concepto-el-teorema-del-límite-central" id="toc-prueba-de-concepto-el-teorema-del-límite-central" class="nav-link" data-scroll-target="#prueba-de-concepto-el-teorema-del-límite-central"><span class="header-section-number">4.1</span> Prueba de concepto: <em>el Teorema del Límite Central</em></a></li>
   </ul></li>
   <li><a href="#regresión-lineal-en-r" id="toc-regresión-lineal-en-r" class="nav-link" data-scroll-target="#regresión-lineal-en-r"><span class="header-section-number">5</span> Regresión lineal en R</a>
   <ul class="collapse">
@@ -247,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 de febrero de 2024</p>
+      <p class="date">22 de febrero de 2024</p>
     </div>
   </div>
   
@@ -265,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Tradicionalmente, los modelos estadísticos se han enseñado como herramientas desconectadas sin una relación clara entre ellas. Sólo hace falta darle un vistazo a un libro clásico de estadística para biólogos (Sokal &amp; Rolhf):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/sokal_rohlf.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -506,7 +502,7 @@ Levels: a b</code></pre>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> letters, <span class="at">size =</span> <span class="dv">30</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-error">
-<pre><code>Error in sample.int(length(x), size, replace, prob): cannot take a sample larger than the population when 'replace = FALSE'</code></pre>
+<pre><code>Error in sample.int(length(x), size, replace, prob): impossível tomar uma amostra maior que a população quando 'replace = FALSE'</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -712,8 +708,8 @@ Levels: a b</code></pre>
 <section id="cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Cómo utilizar datos simulados para entender el comportamiento de las herramientas estadísticas</h1>
 <p>&nbsp;</p>
-<section id="prueba-de-concepto-el-teorema-central-del-límite" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="prueba-de-concepto-el-teorema-central-del-límite"><span class="header-section-number">4.1</span> Prueba de concepto: <em>el Teorema Central del Límite</em></h2>
+<section id="prueba-de-concepto-el-teorema-del-límite-central" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="prueba-de-concepto-el-teorema-del-límite-central"><span class="header-section-number">4.1</span> Prueba de concepto: <em>el Teorema del Límite Central</em></h2>
 <p>El <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Teorema del Límite Central</a> afirma que, si tomamos muestras aleatorias de una población, los promedios de esas muestras seguirán una distribución normal, aunque la población no esté distribuida normalmente. Además, la distribución normal resultante debe tener un promedio cercano al promedio de la población. El teorema es un concepto clave para la estadística inferencial, ya que implica que los métodos estadísticos que funcionan para las distribuciones normales pueden ser aplicables a muchos problemas que implican otros tipos de distribuciones. No obstante, el objetivo aquí es sólo mostrar cómo se pueden utilizar las simulaciones para entender el comportamiento de los métodos estadísticos.</p>
 <p>Para comprobar si esas afirmaciones básicas sobre el Teorema del Límite Central son ciertas, podemos utilizar datos simulados en R. Vamos a simular una población de 1000 observaciones con una distribución uniforme:</p>
 <div class="cell">
@@ -909,7 +905,7 @@ Regresión lineal simple
 <p>El objetivo más común de una regresión lineal es la estimación de los valores de <span class="math inline">\(\beta_{*}\)</span>. Esto se consigue encontrando la línea recta que mejor se ajusta y que representa la asociación entre un predictor y la respuesta:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/regression.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -931,7 +927,7 @@ Regresión lineal simple
 <p>Por ejemplo, un modelo de regresión con este resultado:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="90%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="90%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/model_betas_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid quarto-figure-center figure-img" style="width:90.0%">
@@ -1005,7 +1001,7 @@ Regresión lineal simple
 <p>La función básica de R para construir un modelo lineal es <code>lm()</code>. Veamos los componentes básicos de un modelo de regresión utilizando <code>lm()</code>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lm.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -1201,7 +1197,7 @@ Residual standard error: 0.926 on 49 degrees of freedom</code></pre>
 <p>“<em>Encontramos que un modelo sólo con intercepto (intercept-only model) explicaba mejor las concentraciones de linfocitos y eosinófilos en las aves, indicando que las concentraciones de estos tipos de células eran independientes de la masa corporal.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="85%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="85%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/leukocytes.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid quarto-figure-center figure-img" style="width:85.0%">
@@ -1593,7 +1589,7 @@ x1            2.8900    0.44249  6.5311 3.8537e-08</code></pre>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/duets.png" id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -1606,7 +1602,7 @@ x1            2.8900    0.44249  6.5311 3.8537e-08</code></pre>
 <p>“<em>… la coordinación y la consistencia de los duetos son mayores en las especies con temporadas de apareamiento especialmente largas.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="quarto-figure quarto-figure-center anchored" width="70%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/duet_reg.png" id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
@@ -1806,7 +1802,7 @@ x2           -1.9324    0.41422 -4.6650 2.5851e-05</code></pre>
 <p>“<em>La memoria espacial, el tamaño corporal y el largo de la punta del pico … predijeron positivamente la probabilidad de adquirir y defender un territorio.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lbh_cognition.png" id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2199,7 +2195,7 @@ x1b           1.8140    0.84160  2.1554 3.6172e-02</code></pre>
 <p>“<em>Los machos con puntas de pico más grandes y puntiagudas tuvieron más éxito en ganar control de territorios en el lek.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="75%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="quarto-figure quarto-figure-center anchored" width="75%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/daggers_lbh.png" id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="img-fluid quarto-figure-center figure-img" style="width:75.0%">
@@ -2579,7 +2575,7 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <p>“<em>El aumento de la luz de la luna disminuye la actividad vocal de</em> Agalychnis lemur <em>aunque esta relación es mediada por la temperatura.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="quarto-figure quarto-figure-center anchored" width="70%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lemur.png" id="fig-539a35d47e664c97a50115a146a7f1bd-43" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
@@ -2597,7 +2593,7 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <p>Los ecólogos utilizan habitualmente modelos estadísticos para detectar y explicar interacciones entre factores ecológicos, con el objetivo de evaluar si un efecto de interés cambia de signo o magnitud en distintos contextos. El artículo trata de los peligros de interpretan las interacciones estadísticas sin prestar atención a su propiedad fundamental de simetría, o a la escala de medida, ya sea aditiva o multiplicativa. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939">Acá pueden acceder al artículo</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/interaction.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-44" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2782,14 +2778,14 @@ Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 1.20e+00   1.29e-01    9.31  &lt; 2e-16 ***
 x1          1.30e+00   2.20e-01    5.92  3.2e-09 ***
-x2          1.39e-16   1.90e-01    0.00        1    
+x2          3.51e-16   1.90e-01    0.00        1    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
     Null deviance: 3.9471e+01  on 49  degrees of freedom
-Residual deviance: 2.2204e-16  on 47  degrees of freedom
+Residual deviance: 5.7732e-15  on 47  degrees of freedom
 AIC: 186.9
 
 Number of Fisher Scoring iterations: 3</code></pre>
@@ -2806,15 +2802,15 @@ Number of Fisher Scoring iterations: 3</code></pre>
 <p>Cuadro de los coeficientes (estimados):</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>              Estimate Std. Error    z value   Pr(&gt;|z|)
-(Intercept) 1.2000e+00    0.12889 9.3106e+00 1.2709e-20
-x1          1.3000e+00    0.21960 5.9200e+00 3.2198e-09
-x2          1.3882e-16    0.19016 7.3003e-16 1.0000e+00</code></pre>
+<pre><code>            Estimate Std. Error    z value   Pr(&gt;|z|)
+(Intercept) 1.20e+00    0.12889 9.3106e+00 1.2709e-20
+x1          1.30e+00    0.21960 5.9200e+00 3.2198e-09
+x2          3.51e-16    0.19016 1.8458e-15 1.0000e+00</code></pre>
 </div>
 </div>
 <ul>
 <li><p>El modelo nos dice que <span class="math inline">\(\beta_1\)</span> (el tamaño de efecto de ‘x1’) es 1.3 y que es significativamente diferente de 0 (p = 3.21981^{-9}). Esto se interpreta en realidad como que un aumento de 1 unidad de ‘x1’ resulta en ‘y’ (tasa) en un factor de exp(1.3) = 3.6693.</p></li>
-<li><p>El modelo también nos dice que <span class="math inline">\(\beta_2\)</span> (el tamaño de efecto de ‘x2’) es 1.38824^{-16} y que es significativamente diferente de 0 (p = 1). Esto significa que un aumento en 1 unidad de ‘x2’ resulta en ‘y’ (tasa) en un factor de exp(1.38824^{-16}) = 1.</p></li>
+<li><p>El modelo también nos dice que <span class="math inline">\(\beta_2\)</span> (el tamaño de efecto de ‘x2’) es 3.51001^{-16} y que es significativamente diferente de 0 (p = 1). Esto significa que un aumento en 1 unidad de ‘x2’ resulta en ‘y’ (tasa) en un factor de exp(3.51001^{-16}) = 1.</p></li>
 </ul>
 </div>
 <p>&nbsp;</p>
@@ -2829,7 +2825,7 @@ x2          1.3882e-16    0.19016 7.3003e-16 1.0000e+00</code></pre>
 <p>“<em>La riqueza de especies de mariposas es de tres a cuatro veces mayor cuando aumenta el hábitat natural en el paisaje circundante (en un radio de 2 km), mientras que la abundancia de mariposas se asociaba negativamente con el aumento del tiempo transcurrido desde el último incendio.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/butterflies.png" id="fig-539a35d47e664c97a50115a146a7f1bd-46" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
@@ -2852,7 +2848,7 @@ x2          1.3882e-16    0.19016 7.3003e-16 1.0000e+00</code></pre>
 <p>Existen muchas otras funciones de distribución y enlace:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/link-functions.jpg" id="fig-539a35d47e664c97a50115a146a7f1bd-47" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3111,7 +3107,7 @@ x1 -0.003</code></pre>
 <p>“<em>… el tamaño corporal mostró una correlación negativa con la frecuencia baja del canto.</em>”</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/lbh_song_size.png" id="fig-539a35d47e664c97a50115a146a7f1bd-51" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3292,7 +3288,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 <p>La paradoja de Simpson es un fenómeno en estadística en el que una tendencia aparece en varios grupos de datos pero desaparece o se invierte cuando se combinan los grupos. Se ha utilizado para ilustrar el tipo de resultados engañosos que puede generar el ignorar la estructura en los datos y las relaciones causales entre variables.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="80%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="quarto-figure quarto-figure-center anchored" width="80%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/simpsons_paradox.gif" id="fig-539a35d47e664c97a50115a146a7f1bd-52" class="img-fluid quarto-figure-center figure-img" style="width:80.0%">
@@ -3311,7 +3307,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 </center>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="quarto-figure quarto-figure-center anchored" width="40%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
 <img src="./images/swiss_knife.png" id="fig-539a35d47e664c97a50115a146a7f1bd-53" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
@@ -3355,16 +3351,16 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.3.2 (2023-10-31)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.2 LTS
+Running under: Ubuntu 20.04.2 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3;  LAPACK version 3.9.0
 
 locale:
- [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+ [1] LC_CTYPE=pt_BR.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=pt_BR.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=pt_BR.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
@@ -3377,35 +3373,35 @@ attached base packages:
 
 other attached packages:
  [1] car_3.1-2         carData_3.0-5     sjPlot_2.8.15     lmerTest_3.1-3   
- [5] lme4_1.1-35.1     Matrix_1.6-5      viridis_0.6.4     viridisLite_0.4.2
+ [5] lme4_1.1-35.1     Matrix_1.6-5      viridis_0.6.5     viridisLite_0.4.2
  [9] ggplot2_3.4.4     knitr_1.45       
 
 loaded via a namespace (and not attached):
  [1] sjlabelled_1.2.0    tidyselect_1.2.0    dplyr_1.1.4        
  [4] farver_2.1.1        fastmap_1.1.1       TH.data_1.1-2      
  [7] bayestestR_0.13.1   sjstats_0.18.2      digest_0.6.34      
-[10] estimability_1.4.1  lifecycle_1.0.4     survival_3.2-13    
+[10] estimability_1.4.1  lifecycle_1.0.4     survival_3.5-7     
 [13] magrittr_2.0.3      compiler_4.3.2      rlang_1.1.3        
 [16] tools_4.3.2         utf8_1.2.4          yaml_2.3.8         
 [19] labeling_0.4.3      htmlwidgets_1.6.4   multcomp_1.4-25    
 [22] abind_1.4-5         withr_3.0.0         purrr_1.0.2        
 [25] numDeriv_2016.8-1.1 grid_4.3.2          fansi_1.0.6        
-[28] xtable_1.8-4        colorspace_2.1-0    emmeans_1.9.0      
-[31] scales_1.3.0        MASS_7.3-55         insight_0.19.7     
+[28] xtable_1.8-4        colorspace_2.1-0    emmeans_1.10.0     
+[31] scales_1.3.0        MASS_7.3-60.0.1     insight_0.19.8     
 [34] cli_3.6.2           mvtnorm_1.2-4       rmarkdown_2.25     
 [37] crayon_1.5.2        generics_0.1.3      remotes_2.4.2.1    
 [40] rstudioapi_0.15.0   performance_0.10.8  modelr_0.1.11      
 [43] minqa_1.2.6         splines_4.3.2       vctrs_0.6.5        
-[46] boot_1.3-28         sandwich_3.1-0      jsonlite_1.8.8     
-[49] packrat_0.9.2       tidyr_1.3.0         glue_1.7.0         
-[52] nloptr_2.0.3        codetools_0.2-18    xaringanExtra_0.7.0
+[46] boot_1.3-28.1       sandwich_3.1-0      jsonlite_1.8.8     
+[49] packrat_0.9.2       tidyr_1.3.1         glue_1.7.0         
+[52] nloptr_2.0.3        codetools_0.2-19    xaringanExtra_0.7.0
 [55] stringi_1.8.3       gtable_0.3.4        ggeffects_1.3.4    
 [58] munsell_0.5.0       tibble_3.2.1        pillar_1.9.0       
 [61] htmltools_0.5.7     R6_2.5.1            evaluate_0.23      
-[64] lattice_0.20-45     backports_1.4.1     broom_1.0.5        
-[67] sketchy_1.0.2       Rcpp_1.0.12         coda_0.19-4        
-[70] gridExtra_2.3       nlme_3.1-155        mgcv_1.8-39        
-[73] xfun_0.41           zoo_1.8-12          sjmisc_2.8.9       
+[64] lattice_0.22-5      backports_1.4.1     broom_1.0.5        
+[67] sketchy_1.0.2       Rcpp_1.0.12         coda_0.19-4.1      
+[70] gridExtra_2.3       nlme_3.1-164        mgcv_1.9-1         
+[73] xfun_0.42           zoo_1.8-12          sjmisc_2.8.9       
 [76] pkgconfig_2.0.3    </code></pre>
 </div>
 </div>
@@ -4159,7 +4155,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-367"><a href="#cb163-367" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-368"><a href="#cb163-368" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb163-369"><a href="#cb163-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-370"><a href="#cb163-370" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prueba de concepto: *el Teorema Central del Límite*</span></span>
+<span id="cb163-370"><a href="#cb163-370" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prueba de concepto: *el Teorema del Límite Central*</span></span>
 <span id="cb163-371"><a href="#cb163-371" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-372"><a href="#cb163-372" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">Teorema del Límite Central</span><span class="co">](https://en.wikipedia.org/wiki/Central_limit_theorem)</span> afirma que, si tomamos muestras aleatorias de una población, los promedios de esas muestras seguirán una distribución normal, aunque la población no esté distribuida normalmente. Además, la distribución normal resultante debe tener un promedio cercano al promedio de la población. El teorema es un concepto clave para la estadística inferencial, ya que implica que los métodos estadísticos que funcionan para las distribuciones normales pueden ser aplicables a muchos problemas que implican otros tipos de distribuciones. No obstante, el objetivo aquí es sólo mostrar cómo se pueden utilizar las simulaciones para entender el comportamiento de los métodos estadísticos.</span>
 <span id="cb163-373"><a href="#cb163-373" aria-hidden="true" tabindex="-1"></a></span>
@@ -5496,523 +5492,522 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-1772"><a href="#cb163-1772" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb163-1773"><a href="#cb163-1773" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1774"><a href="#cb163-1774" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-warning}</span>
-<span id="cb163-1775"><a href="#cb163-1775" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1776"><a href="#cb163-1776" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lectura: _Understanding ‘it depends’ in ecology: a guide to hypothesising, visualising and interpreting statistical interactions_ {.unnumbered .unlisted}</span></span>
-<span id="cb163-1777"><a href="#cb163-1777" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1778"><a href="#cb163-1778" aria-hidden="true" tabindex="-1"></a>Los ecólogos utilizan habitualmente modelos estadísticos para detectar y explicar interacciones entre factores ecológicos, con el objetivo de evaluar si un efecto de interés cambia de signo o magnitud en distintos contextos. El artículo trata de los peligros de interpretan las interacciones estadísticas sin prestar atención a su propiedad fundamental de simetría, o a la escala de medida, ya sea aditiva o multiplicativa. <span class="co">[</span><span class="ot">Acá pueden acceder al artículo</span><span class="co">](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939)</span>.</span>
-<span id="cb163-1779"><a href="#cb163-1779" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1780"><a href="#cb163-1780" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "100%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-1781"><a href="#cb163-1781" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1782"><a href="#cb163-1782" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/interaction.jpg")</span></span>
-<span id="cb163-1783"><a href="#cb163-1783" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1784"><a href="#cb163-1784" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1785"><a href="#cb163-1785" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-1786"><a href="#cb163-1786" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1787"><a href="#cb163-1787" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1788"><a href="#cb163-1788" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1789"><a href="#cb163-1789" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb163-1790"><a href="#cb163-1790" aria-hidden="true" tabindex="-1"></a>&lt;font size="5"&gt;Ejercicio 7&lt;/font&gt;</span>
-<span id="cb163-1791"><a href="#cb163-1791" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1792"><a href="#cb163-1792" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1793"><a href="#cb163-1793" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1794"><a href="#cb163-1794" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Modifique el <span class="co">[</span><span class="ot">código usado para simular un único predictor asociado</span><span class="co">](#simular-un-predictor-asociado)</span> aumentando gradualmente el error. Esto se hace aumentando el argumento 'sd' en <span class="in">`error &lt;- rnorm(n = n, sd = 2)`</span>.</span>
-<span id="cb163-1795"><a href="#cb163-1795" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1796"><a href="#cb163-1796" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mire cómo los errores más grandes afectan la inferencia (debe volver a correr los modelos)</span>
-<span id="cb163-1797"><a href="#cb163-1797" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1798"><a href="#cb163-1798" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
-<span id="cb163-1799"><a href="#cb163-1799" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1800"><a href="#cb163-1800" aria-hidden="true" tabindex="-1"></a><span class="in"># definir semilla</span></span>
-<span id="cb163-1801"><a href="#cb163-1801" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
-<span id="cb163-1802"><a href="#cb163-1802" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1803"><a href="#cb163-1803" aria-hidden="true" tabindex="-1"></a><span class="in"># numero de observaciones</span></span>
-<span id="cb163-1804"><a href="#cb163-1804" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 50</span></span>
-<span id="cb163-1805"><a href="#cb163-1805" aria-hidden="true" tabindex="-1"></a><span class="in">b0 &lt;- -4</span></span>
-<span id="cb163-1806"><a href="#cb163-1806" aria-hidden="true" tabindex="-1"></a><span class="in">b1 &lt;- 3</span></span>
-<span id="cb163-1807"><a href="#cb163-1807" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rnorm(n = n, sd = 10)</span></span>
-<span id="cb163-1808"><a href="#cb163-1808" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1809"><a href="#cb163-1809" aria-hidden="true" tabindex="-1"></a><span class="in">#  variables aleatorias</span></span>
-<span id="cb163-1810"><a href="#cb163-1810" aria-hidden="true" tabindex="-1"></a><span class="in">x1 &lt;-  rnorm(n = n, mean = 0, sd = 1)</span></span>
-<span id="cb163-1811"><a href="#cb163-1811" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- b0 + b1 * x1 + error</span></span>
-<span id="cb163-1812"><a href="#cb163-1812" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1813"><a href="#cb163-1813" aria-hidden="true" tabindex="-1"></a><span class="in"># crear data frame</span></span>
-<span id="cb163-1814"><a href="#cb163-1814" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, y)</span></span>
-<span id="cb163-1815"><a href="#cb163-1815" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1816"><a href="#cb163-1816" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
-<span id="cb163-1817"><a href="#cb163-1817" aria-hidden="true" tabindex="-1"></a><span class="in">summary(lm(formula = y ~ x1, data = xy_datos))</span></span>
-<span id="cb163-1818"><a href="#cb163-1818" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1819"><a href="#cb163-1819" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1820"><a href="#cb163-1820" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1821"><a href="#cb163-1821" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ahora reemplace el término de error con <span class="in">`error &lt;- rexp(n = n, rate = 0.2)`</span>. Esto crea un error con una distribución exponencial (por lo tanto no normal). Se supone que esto es problemático para el poder inferencial de estos modelos. Compare las estimaciones que obtuvo con los valores de la simulación ('b0' y 'b1'). Explore la distribución de los residuos (<span class="in">`plot(nombre_del_modelo)`</span>) para los modelos de error 'normal' y 'exponencial'.</span>
-<span id="cb163-1822"><a href="#cb163-1822" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1823"><a href="#cb163-1823" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
-<span id="cb163-1824"><a href="#cb163-1824" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1825"><a href="#cb163-1825" aria-hidden="true" tabindex="-1"></a><span class="in"># definir semilla</span></span>
-<span id="cb163-1826"><a href="#cb163-1826" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
-<span id="cb163-1827"><a href="#cb163-1827" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1828"><a href="#cb163-1828" aria-hidden="true" tabindex="-1"></a><span class="in"># numero de observaciones</span></span>
-<span id="cb163-1829"><a href="#cb163-1829" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 50</span></span>
-<span id="cb163-1830"><a href="#cb163-1830" aria-hidden="true" tabindex="-1"></a><span class="in">b0 &lt;- -4</span></span>
-<span id="cb163-1831"><a href="#cb163-1831" aria-hidden="true" tabindex="-1"></a><span class="in">b1 &lt;- 3</span></span>
-<span id="cb163-1832"><a href="#cb163-1832" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rnorm(n = n,  sd = 5)</span></span>
-<span id="cb163-1833"><a href="#cb163-1833" aria-hidden="true" tabindex="-1"></a><span class="in">sd(error)</span></span>
-<span id="cb163-1834"><a href="#cb163-1834" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1835"><a href="#cb163-1835" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rexp(n = n, rate = 0.2)</span></span>
-<span id="cb163-1836"><a href="#cb163-1836" aria-hidden="true" tabindex="-1"></a><span class="in">sd(error)</span></span>
-<span id="cb163-1837"><a href="#cb163-1837" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1838"><a href="#cb163-1838" aria-hidden="true" tabindex="-1"></a><span class="in">#  variables aleatorias</span></span>
-<span id="cb163-1839"><a href="#cb163-1839" aria-hidden="true" tabindex="-1"></a><span class="in">x1 &lt;-  rnorm(n = n, mean = 0, sd = 1)</span></span>
-<span id="cb163-1840"><a href="#cb163-1840" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- b0 + b1 * x1 + error</span></span>
-<span id="cb163-1841"><a href="#cb163-1841" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1842"><a href="#cb163-1842" aria-hidden="true" tabindex="-1"></a><span class="in"># crear data frame</span></span>
-<span id="cb163-1843"><a href="#cb163-1843" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, y)</span></span>
-<span id="cb163-1844"><a href="#cb163-1844" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1845"><a href="#cb163-1845" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
-<span id="cb163-1846"><a href="#cb163-1846" aria-hidden="true" tabindex="-1"></a><span class="in">mod &lt;- lm(formula = y ~ x1, data = xy_datos)</span></span>
-<span id="cb163-1847"><a href="#cb163-1847" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1848"><a href="#cb163-1848" aria-hidden="true" tabindex="-1"></a><span class="in">coef(mod)</span></span>
-<span id="cb163-1849"><a href="#cb163-1849" aria-hidden="true" tabindex="-1"></a><span class="in">resd_mod &lt;- resid(mod)</span></span>
-<span id="cb163-1850"><a href="#cb163-1850" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1851"><a href="#cb163-1851" aria-hidden="true" tabindex="-1"></a><span class="in"># ver distribucion</span></span>
-<span id="cb163-1852"><a href="#cb163-1852" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = data.frame(resd_mod), mapping = aes(x = resd_mod)) + geom_histogram() </span></span>
-<span id="cb163-1853"><a href="#cb163-1853" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1854"><a href="#cb163-1854" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1855"><a href="#cb163-1855" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1856"><a href="#cb163-1856" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Se supone que la colinealidad (la presencia de predictores correlacionados) afecta a la estabilidad de la regresión múltiple. El siguiente código crea dos predictores altamente colineales ('x1' y 'x2'). La última línea de código muestra la correlación entre ellos.</span>
-<span id="cb163-1857"><a href="#cb163-1857" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1860"><a href="#cb163-1860" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-1861"><a href="#cb163-1861" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
-<span id="cb163-1862"><a href="#cb163-1862" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb163-1863"><a href="#cb163-1863" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1864"><a href="#cb163-1864" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de observaciones</span></span>
-<span id="cb163-1865"><a href="#cb163-1865" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb163-1866"><a href="#cb163-1866" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
-<span id="cb163-1867"><a href="#cb163-1867" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb163-1868"><a href="#cb163-1868" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span></span>
-<span id="cb163-1869"><a href="#cb163-1869" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb163-1870"><a href="#cb163-1870" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1871"><a href="#cb163-1871" aria-hidden="true" tabindex="-1"></a><span class="co">#  variables aleatorias</span></span>
-<span id="cb163-1872"><a href="#cb163-1872" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb163-1873"><a href="#cb163-1873" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1874"><a href="#cb163-1874" aria-hidden="true" tabindex="-1"></a><span class="co"># hacer x2 muy parecido a x1</span></span>
-<span id="cb163-1875"><a href="#cb163-1875" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> x1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.3</span>)</span>
-<span id="cb163-1876"><a href="#cb163-1876" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1877"><a href="#cb163-1877" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x1, x2)</span>
-<span id="cb163-1878"><a href="#cb163-1878" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1879"><a href="#cb163-1879" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1880"><a href="#cb163-1880" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1881"><a href="#cb163-1881" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE, echo=FALSE}</span></span>
-<span id="cb163-1882"><a href="#cb163-1882" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1883"><a href="#cb163-1883" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, x2, y)</span></span>
-<span id="cb163-1884"><a href="#cb163-1884" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1885"><a href="#cb163-1885" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
-<span id="cb163-1886"><a href="#cb163-1886" aria-hidden="true" tabindex="-1"></a><span class="in">xy_mod &lt;- lm(formula = y ~ x1 + x2, data = xy_datos)</span></span>
-<span id="cb163-1887"><a href="#cb163-1887" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1888"><a href="#cb163-1888" aria-hidden="true" tabindex="-1"></a><span class="in">summary(xy_mod)</span></span>
-<span id="cb163-1889"><a href="#cb163-1889" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1890"><a href="#cb163-1890" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1891"><a href="#cb163-1891" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1892"><a href="#cb163-1892" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Construya un modelo de regresión múltiple para estos datos (y \~ x1 + x2). Puede utilizar el mismo código que en la sección <span class="co">[</span><span class="ot">Añadir más de un predictor: regresión múltiple</span><span class="co">](#añadir-más-de-un-predictor:-regresión-múltiple)</span>.</span>
-<span id="cb163-1893"><a href="#cb163-1893" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1894"><a href="#cb163-1894" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Cómo afecta a la inferencia la presencia de predictores colineales? Realice los gráficos de diagnóstico para este modelo (<span class="in">`plot(nombre_del_modelo)`</span>).</span>
-<span id="cb163-1895"><a href="#cb163-1895" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1896"><a href="#cb163-1896" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simule un juego de datos con tres predictores en los que sólo dos de ellos son altamente colineales. Ajuste un modelo de regresión múltiple (y \~ x1 + x2 + x3) para esos datos y observe cómo la colinealidad afecta a la estimación del predictor no colineal.</span>
-<span id="cb163-1897"><a href="#cb163-1897" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1898"><a href="#cb163-1898" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1899"><a href="#cb163-1899" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-1900"><a href="#cb163-1900" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1901"><a href="#cb163-1901" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb163-1902"><a href="#cb163-1902" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1903"><a href="#cb163-1903" aria-hidden="true" tabindex="-1"></a><span class="fu"># Extender los modelos lineales a estructuras de datos más complejas</span></span>
-<span id="cb163-1904"><a href="#cb163-1904" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1905"><a href="#cb163-1905" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1906"><a href="#cb163-1906" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1907"><a href="#cb163-1907" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modelos lineales generalizados (GLM)</span></span>
-<span id="cb163-1908"><a href="#cb163-1908" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1909"><a href="#cb163-1909" aria-hidden="true" tabindex="-1"></a>Los GLM nos permiten modelar la asociación a variables respuesta que no siguen una distribución normal. Además, permiten modelar distribuciones que se asemejan más al proceso que generó los datos. El siguiente código crea un juego de datos con una respuesta que representa cuentas (por lo tanto, no normal):</span>
-<span id="cb163-1910"><a href="#cb163-1910" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1913"><a href="#cb163-1913" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-1914"><a href="#cb163-1914" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
-<span id="cb163-1915"><a href="#cb163-1915" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb163-1916"><a href="#cb163-1916" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1917"><a href="#cb163-1917" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de muestas</span></span>
-<span id="cb163-1918"><a href="#cb163-1918" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb163-1919"><a href="#cb163-1919" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1920"><a href="#cb163-1920" aria-hidden="true" tabindex="-1"></a><span class="co"># coeficientes</span></span>
-<span id="cb163-1921"><a href="#cb163-1921" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
-<span id="cb163-1922"><a href="#cb163-1922" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.3</span></span>
-<span id="cb163-1923"><a href="#cb163-1923" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb163-1775"><a href="#cb163-1775" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lectura: *Understanding 'it depends' in ecology: a guide to hypothesising, visualising and interpreting statistical interactions* {.unnumbered .unlisted}</span></span>
+<span id="cb163-1776"><a href="#cb163-1776" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1777"><a href="#cb163-1777" aria-hidden="true" tabindex="-1"></a>Los ecólogos utilizan habitualmente modelos estadísticos para detectar y explicar interacciones entre factores ecológicos, con el objetivo de evaluar si un efecto de interés cambia de signo o magnitud en distintos contextos. El artículo trata de los peligros de interpretan las interacciones estadísticas sin prestar atención a su propiedad fundamental de simetría, o a la escala de medida, ya sea aditiva o multiplicativa. <span class="co">[</span><span class="ot">Acá pueden acceder al artículo</span><span class="co">](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939)</span>.</span>
+<span id="cb163-1778"><a href="#cb163-1778" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1779"><a href="#cb163-1779" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "100%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-1780"><a href="#cb163-1780" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1781"><a href="#cb163-1781" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/interaction.jpg")</span></span>
+<span id="cb163-1782"><a href="#cb163-1782" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1783"><a href="#cb163-1783" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1784"><a href="#cb163-1784" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-1785"><a href="#cb163-1785" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1786"><a href="#cb163-1786" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1787"><a href="#cb163-1787" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1788"><a href="#cb163-1788" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb163-1789"><a href="#cb163-1789" aria-hidden="true" tabindex="-1"></a>&lt;font size="5"&gt;Ejercicio 7&lt;/font&gt;</span>
+<span id="cb163-1790"><a href="#cb163-1790" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1791"><a href="#cb163-1791" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1792"><a href="#cb163-1792" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1793"><a href="#cb163-1793" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Modifique el <span class="co">[</span><span class="ot">código usado para simular un único predictor asociado</span><span class="co">](#simular-un-predictor-asociado)</span> aumentando gradualmente el error. Esto se hace aumentando el argumento 'sd' en <span class="in">`error &lt;- rnorm(n = n, sd = 2)`</span>.</span>
+<span id="cb163-1794"><a href="#cb163-1794" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1795"><a href="#cb163-1795" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mire cómo los errores más grandes afectan la inferencia (debe volver a correr los modelos)</span>
+<span id="cb163-1796"><a href="#cb163-1796" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1797"><a href="#cb163-1797" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
+<span id="cb163-1798"><a href="#cb163-1798" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1799"><a href="#cb163-1799" aria-hidden="true" tabindex="-1"></a><span class="in"># definir semilla</span></span>
+<span id="cb163-1800"><a href="#cb163-1800" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
+<span id="cb163-1801"><a href="#cb163-1801" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1802"><a href="#cb163-1802" aria-hidden="true" tabindex="-1"></a><span class="in"># numero de observaciones</span></span>
+<span id="cb163-1803"><a href="#cb163-1803" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 50</span></span>
+<span id="cb163-1804"><a href="#cb163-1804" aria-hidden="true" tabindex="-1"></a><span class="in">b0 &lt;- -4</span></span>
+<span id="cb163-1805"><a href="#cb163-1805" aria-hidden="true" tabindex="-1"></a><span class="in">b1 &lt;- 3</span></span>
+<span id="cb163-1806"><a href="#cb163-1806" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rnorm(n = n, sd = 10)</span></span>
+<span id="cb163-1807"><a href="#cb163-1807" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1808"><a href="#cb163-1808" aria-hidden="true" tabindex="-1"></a><span class="in">#  variables aleatorias</span></span>
+<span id="cb163-1809"><a href="#cb163-1809" aria-hidden="true" tabindex="-1"></a><span class="in">x1 &lt;-  rnorm(n = n, mean = 0, sd = 1)</span></span>
+<span id="cb163-1810"><a href="#cb163-1810" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- b0 + b1 * x1 + error</span></span>
+<span id="cb163-1811"><a href="#cb163-1811" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1812"><a href="#cb163-1812" aria-hidden="true" tabindex="-1"></a><span class="in"># crear data frame</span></span>
+<span id="cb163-1813"><a href="#cb163-1813" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, y)</span></span>
+<span id="cb163-1814"><a href="#cb163-1814" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1815"><a href="#cb163-1815" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
+<span id="cb163-1816"><a href="#cb163-1816" aria-hidden="true" tabindex="-1"></a><span class="in">summary(lm(formula = y ~ x1, data = xy_datos))</span></span>
+<span id="cb163-1817"><a href="#cb163-1817" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1818"><a href="#cb163-1818" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1819"><a href="#cb163-1819" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1820"><a href="#cb163-1820" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ahora reemplace el término de error con <span class="in">`error &lt;- rexp(n = n, rate = 0.2)`</span>. Esto crea un error con una distribución exponencial (por lo tanto no normal). Se supone que esto es problemático para el poder inferencial de estos modelos. Compare las estimaciones que obtuvo con los valores de la simulación ('b0' y 'b1'). Explore la distribución de los residuos (<span class="in">`plot(nombre_del_modelo)`</span>) para los modelos de error 'normal' y 'exponencial'.</span>
+<span id="cb163-1821"><a href="#cb163-1821" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1822"><a href="#cb163-1822" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
+<span id="cb163-1823"><a href="#cb163-1823" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1824"><a href="#cb163-1824" aria-hidden="true" tabindex="-1"></a><span class="in"># definir semilla</span></span>
+<span id="cb163-1825"><a href="#cb163-1825" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
+<span id="cb163-1826"><a href="#cb163-1826" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1827"><a href="#cb163-1827" aria-hidden="true" tabindex="-1"></a><span class="in"># numero de observaciones</span></span>
+<span id="cb163-1828"><a href="#cb163-1828" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 50</span></span>
+<span id="cb163-1829"><a href="#cb163-1829" aria-hidden="true" tabindex="-1"></a><span class="in">b0 &lt;- -4</span></span>
+<span id="cb163-1830"><a href="#cb163-1830" aria-hidden="true" tabindex="-1"></a><span class="in">b1 &lt;- 3</span></span>
+<span id="cb163-1831"><a href="#cb163-1831" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rnorm(n = n,  sd = 5)</span></span>
+<span id="cb163-1832"><a href="#cb163-1832" aria-hidden="true" tabindex="-1"></a><span class="in">sd(error)</span></span>
+<span id="cb163-1833"><a href="#cb163-1833" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1834"><a href="#cb163-1834" aria-hidden="true" tabindex="-1"></a><span class="in">error &lt;- rexp(n = n, rate = 0.2)</span></span>
+<span id="cb163-1835"><a href="#cb163-1835" aria-hidden="true" tabindex="-1"></a><span class="in">sd(error)</span></span>
+<span id="cb163-1836"><a href="#cb163-1836" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1837"><a href="#cb163-1837" aria-hidden="true" tabindex="-1"></a><span class="in">#  variables aleatorias</span></span>
+<span id="cb163-1838"><a href="#cb163-1838" aria-hidden="true" tabindex="-1"></a><span class="in">x1 &lt;-  rnorm(n = n, mean = 0, sd = 1)</span></span>
+<span id="cb163-1839"><a href="#cb163-1839" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- b0 + b1 * x1 + error</span></span>
+<span id="cb163-1840"><a href="#cb163-1840" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1841"><a href="#cb163-1841" aria-hidden="true" tabindex="-1"></a><span class="in"># crear data frame</span></span>
+<span id="cb163-1842"><a href="#cb163-1842" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, y)</span></span>
+<span id="cb163-1843"><a href="#cb163-1843" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1844"><a href="#cb163-1844" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
+<span id="cb163-1845"><a href="#cb163-1845" aria-hidden="true" tabindex="-1"></a><span class="in">mod &lt;- lm(formula = y ~ x1, data = xy_datos)</span></span>
+<span id="cb163-1846"><a href="#cb163-1846" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1847"><a href="#cb163-1847" aria-hidden="true" tabindex="-1"></a><span class="in">coef(mod)</span></span>
+<span id="cb163-1848"><a href="#cb163-1848" aria-hidden="true" tabindex="-1"></a><span class="in">resd_mod &lt;- resid(mod)</span></span>
+<span id="cb163-1849"><a href="#cb163-1849" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1850"><a href="#cb163-1850" aria-hidden="true" tabindex="-1"></a><span class="in"># ver distribucion</span></span>
+<span id="cb163-1851"><a href="#cb163-1851" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = data.frame(resd_mod), mapping = aes(x = resd_mod)) + geom_histogram() </span></span>
+<span id="cb163-1852"><a href="#cb163-1852" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1853"><a href="#cb163-1853" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1854"><a href="#cb163-1854" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1855"><a href="#cb163-1855" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Se supone que la colinealidad (la presencia de predictores correlacionados) afecta a la estabilidad de la regresión múltiple. El siguiente código crea dos predictores altamente colineales ('x1' y 'x2'). La última línea de código muestra la correlación entre ellos.</span>
+<span id="cb163-1856"><a href="#cb163-1856" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1859"><a href="#cb163-1859" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-1860"><a href="#cb163-1860" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
+<span id="cb163-1861"><a href="#cb163-1861" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb163-1862"><a href="#cb163-1862" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1863"><a href="#cb163-1863" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de observaciones</span></span>
+<span id="cb163-1864"><a href="#cb163-1864" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb163-1865"><a href="#cb163-1865" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
+<span id="cb163-1866"><a href="#cb163-1866" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb163-1867"><a href="#cb163-1867" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span></span>
+<span id="cb163-1868"><a href="#cb163-1868" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb163-1869"><a href="#cb163-1869" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1870"><a href="#cb163-1870" aria-hidden="true" tabindex="-1"></a><span class="co">#  variables aleatorias</span></span>
+<span id="cb163-1871"><a href="#cb163-1871" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb163-1872"><a href="#cb163-1872" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1873"><a href="#cb163-1873" aria-hidden="true" tabindex="-1"></a><span class="co"># hacer x2 muy parecido a x1</span></span>
+<span id="cb163-1874"><a href="#cb163-1874" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> x1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.3</span>)</span>
+<span id="cb163-1875"><a href="#cb163-1875" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1876"><a href="#cb163-1876" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x1, x2)</span>
+<span id="cb163-1877"><a href="#cb163-1877" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1878"><a href="#cb163-1878" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1879"><a href="#cb163-1879" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1880"><a href="#cb163-1880" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE, echo=FALSE}</span></span>
+<span id="cb163-1881"><a href="#cb163-1881" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1882"><a href="#cb163-1882" aria-hidden="true" tabindex="-1"></a><span class="in">xy_datos &lt;- data.frame(x1, x2, y)</span></span>
+<span id="cb163-1883"><a href="#cb163-1883" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1884"><a href="#cb163-1884" aria-hidden="true" tabindex="-1"></a><span class="in"># construir modelos</span></span>
+<span id="cb163-1885"><a href="#cb163-1885" aria-hidden="true" tabindex="-1"></a><span class="in">xy_mod &lt;- lm(formula = y ~ x1 + x2, data = xy_datos)</span></span>
+<span id="cb163-1886"><a href="#cb163-1886" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1887"><a href="#cb163-1887" aria-hidden="true" tabindex="-1"></a><span class="in">summary(xy_mod)</span></span>
+<span id="cb163-1888"><a href="#cb163-1888" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1889"><a href="#cb163-1889" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1890"><a href="#cb163-1890" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1891"><a href="#cb163-1891" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Construya un modelo de regresión múltiple para estos datos (y \~ x1 + x2). Puede utilizar el mismo código que en la sección <span class="co">[</span><span class="ot">Añadir más de un predictor: regresión múltiple</span><span class="co">](#añadir-más-de-un-predictor:-regresión-múltiple)</span>.</span>
+<span id="cb163-1892"><a href="#cb163-1892" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1893"><a href="#cb163-1893" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Cómo afecta a la inferencia la presencia de predictores colineales? Realice los gráficos de diagnóstico para este modelo (<span class="in">`plot(nombre_del_modelo)`</span>).</span>
+<span id="cb163-1894"><a href="#cb163-1894" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1895"><a href="#cb163-1895" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simule un juego de datos con tres predictores en los que sólo dos de ellos son altamente colineales. Ajuste un modelo de regresión múltiple (y \~ x1 + x2 + x3) para esos datos y observe cómo la colinealidad afecta a la estimación del predictor no colineal.</span>
+<span id="cb163-1896"><a href="#cb163-1896" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1897"><a href="#cb163-1897" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1898"><a href="#cb163-1898" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-1899"><a href="#cb163-1899" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1900"><a href="#cb163-1900" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb163-1901"><a href="#cb163-1901" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1902"><a href="#cb163-1902" aria-hidden="true" tabindex="-1"></a><span class="fu"># Extender los modelos lineales a estructuras de datos más complejas</span></span>
+<span id="cb163-1903"><a href="#cb163-1903" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1904"><a href="#cb163-1904" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1905"><a href="#cb163-1905" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1906"><a href="#cb163-1906" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modelos lineales generalizados (GLM)</span></span>
+<span id="cb163-1907"><a href="#cb163-1907" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1908"><a href="#cb163-1908" aria-hidden="true" tabindex="-1"></a>Los GLM nos permiten modelar la asociación a variables respuesta que no siguen una distribución normal. Además, permiten modelar distribuciones que se asemejan más al proceso que generó los datos. El siguiente código crea un juego de datos con una respuesta que representa cuentas (por lo tanto, no normal):</span>
+<span id="cb163-1909"><a href="#cb163-1909" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1912"><a href="#cb163-1912" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-1913"><a href="#cb163-1913" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
+<span id="cb163-1914"><a href="#cb163-1914" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb163-1915"><a href="#cb163-1915" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1916"><a href="#cb163-1916" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de muestas</span></span>
+<span id="cb163-1917"><a href="#cb163-1917" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb163-1918"><a href="#cb163-1918" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1919"><a href="#cb163-1919" aria-hidden="true" tabindex="-1"></a><span class="co"># coeficientes</span></span>
+<span id="cb163-1920"><a href="#cb163-1920" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
+<span id="cb163-1921"><a href="#cb163-1921" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.3</span></span>
+<span id="cb163-1922"><a href="#cb163-1922" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb163-1923"><a href="#cb163-1923" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1924"><a href="#cb163-1924" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1925"><a href="#cb163-1925" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1926"><a href="#cb163-1926" aria-hidden="true" tabindex="-1"></a><span class="co">#generar variables</span></span>
-<span id="cb163-1927"><a href="#cb163-1927" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> n, <span class="at">lambda =</span> <span class="fl">6.5</span>) <span class="co"># lambda = tasa promedio de exitos </span></span>
-<span id="cb163-1928"><a href="#cb163-1928" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, , <span class="fu">length</span>(y))</span>
-<span id="cb163-1929"><a href="#cb163-1929" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> (<span class="fu">log</span>(y) <span class="sc">-</span> b0 <span class="sc">-</span> b2 <span class="sc">*</span> x2) <span class="sc">/</span> b1</span>
-<span id="cb163-1930"><a href="#cb163-1930" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1931"><a href="#cb163-1931" aria-hidden="true" tabindex="-1"></a><span class="co"># crear data frame</span></span>
-<span id="cb163-1932"><a href="#cb163-1932" aria-hidden="true" tabindex="-1"></a>xy_datos_pois <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, x2, y)</span>
-<span id="cb163-1933"><a href="#cb163-1933" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1934"><a href="#cb163-1934" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xy_datos_pois)</span>
-<span id="cb163-1935"><a href="#cb163-1935" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1936"><a href="#cb163-1936" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1937"><a href="#cb163-1937" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1938"><a href="#cb163-1938" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1939"><a href="#cb163-1939" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1940"><a href="#cb163-1940" aria-hidden="true" tabindex="-1"></a>También grafiquemos 'x1' *vs* 'y':</span>
-<span id="cb163-1941"><a href="#cb163-1941" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1944"><a href="#cb163-1944" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-1945"><a href="#cb163-1945" aria-hidden="true" tabindex="-1"></a><span class="co"># graficar</span></span>
-<span id="cb163-1946"><a href="#cb163-1946" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(xy_datos_pois, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> </span>
-<span id="cb163-1947"><a href="#cb163-1947" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
-<span id="cb163-1948"><a href="#cb163-1948" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1949"><a href="#cb163-1949" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1950"><a href="#cb163-1950" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1951"><a href="#cb163-1951" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1952"><a href="#cb163-1952" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1953"><a href="#cb163-1953" aria-hidden="true" tabindex="-1"></a>La relación no parece muy lineal ni la varianza parece ser constante a través de 'x1'.</span>
-<span id="cb163-1954"><a href="#cb163-1954" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1955"><a href="#cb163-1955" aria-hidden="true" tabindex="-1"></a>Podemos relajar el requisito de la distribución normal con GLMs. <span class="in">`glm()`</span> es una función básica de R que nos ayuda a hacer el truco. Para este ejemplo la distribución más apropiada es *Poisson*. Esto se puede establecer en el argumento <span class="sc">\`</span>family' así:</span>
-<span id="cb163-1956"><a href="#cb163-1956" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1959"><a href="#cb163-1959" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-1960"><a href="#cb163-1960" aria-hidden="true" tabindex="-1"></a>glm_pois  <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> xy_datos_pois, <span class="at">family =</span> <span class="fu">poisson</span>())</span>
-<span id="cb163-1961"><a href="#cb163-1961" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1962"><a href="#cb163-1962" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1963"><a href="#cb163-1963" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1964"><a href="#cb163-1964" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1965"><a href="#cb163-1965" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1966"><a href="#cb163-1966" aria-hidden="true" tabindex="-1"></a>Que es equivalente a esto:</span>
-<span id="cb163-1967"><a href="#cb163-1967" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1968"><a href="#cb163-1968" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 6&gt;$\hat{Y} \sim_{poisson} \beta_{o} + \beta_{1} * x_{1} + \beta_{2} * x_{2}$&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-1969"><a href="#cb163-1969" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1970"><a href="#cb163-1970" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1971"><a href="#cb163-1971" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1972"><a href="#cb163-1972" aria-hidden="true" tabindex="-1"></a>Como puede ver el único argumento extra comparado con <span class="in">`lm()`</span> es <span class="in">`family`</span>. El resto es simplemente la "fórmula" y los "datos" con los que ya estamos familiarizados. Así que, de nuevo, podemos aprovechar nuestros conocimientos sobre los modelos lineales para extenderlos a estructuras de datos más complejas.</span>
-<span id="cb163-1973"><a href="#cb163-1973" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1974"><a href="#cb163-1974" aria-hidden="true" tabindex="-1"></a>También necesitamos ejecutar <span class="in">`summary()`</span> para obtener el resultado del modelo:</span>
-<span id="cb163-1975"><a href="#cb163-1975" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1978"><a href="#cb163-1978" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-1979"><a href="#cb163-1979" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_pois)</span>
-<span id="cb163-1980"><a href="#cb163-1980" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1981"><a href="#cb163-1981" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-1982"><a href="#cb163-1982" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1983"><a href="#cb163-1983" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1984"><a href="#cb163-1984" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1985"><a href="#cb163-1985" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1986"><a href="#cb163-1986" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1987"><a href="#cb163-1987" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-success}</span>
-<span id="cb163-1988"><a href="#cb163-1988" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1989"><a href="#cb163-1989" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1990"><a href="#cb163-1990" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Interpretación del modelo&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-1991"><a href="#cb163-1991" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1992"><a href="#cb163-1992" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-1993"><a href="#cb163-1993" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1994"><a href="#cb163-1994" aria-hidden="true" tabindex="-1"></a>Cuadro de los coeficientes (estimados):</span>
-<span id="cb163-1995"><a href="#cb163-1995" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1996"><a href="#cb163-1996" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo= FALSE}</span></span>
-<span id="cb163-1997"><a href="#cb163-1997" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1998"><a href="#cb163-1998" aria-hidden="true" tabindex="-1"></a><span class="in">summ_glm_pois &lt;- summary(glm_pois)</span></span>
-<span id="cb163-1999"><a href="#cb163-1999" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2000"><a href="#cb163-2000" aria-hidden="true" tabindex="-1"></a><span class="in">summ_glm_pois$coefficients</span></span>
-<span id="cb163-2001"><a href="#cb163-2001" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2002"><a href="#cb163-2002" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2003"><a href="#cb163-2003" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo nos dice que $\beta_1$ (el tamaño de efecto de 'x1') es <span class="in">`r summ_glm_pois$coefficients[2, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_glm_pois$coefficients[2, 4]`</span>). Esto se interpreta en realidad como que un aumento de 1 unidad de 'x1' resulta en 'y' (tasa) en un factor de exp(<span class="in">`r summ_glm_pois$coefficients[2, 1]`</span>) = <span class="in">`r exp(summ_glm_pois$coefficients[2, 1])`</span>.</span>
-<span id="cb163-2004"><a href="#cb163-2004" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2005"><a href="#cb163-2005" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo también nos dice que $\beta_2$ (el tamaño de efecto de 'x2') es <span class="in">`r summ_glm_pois$coefficients[3, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_glm_pois$coefficients[3, 4]`</span>). Esto significa que un aumento en 1 unidad de 'x2' resulta en 'y' (tasa) en un factor de exp(<span class="in">`r summ_glm_pois$coefficients[3, 1]`</span>) = <span class="in">`r exp(summ_glm_pois$coefficients[3, 1])`</span>.</span>
-<span id="cb163-2006"><a href="#cb163-2006" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2007"><a href="#cb163-2007" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2008"><a href="#cb163-2008" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2009"><a href="#cb163-2009" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2010"><a href="#cb163-2010" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-warning}</span>
-<span id="cb163-2011"><a href="#cb163-2011" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Caso de estudio&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-2012"><a href="#cb163-2012" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2013"><a href="#cb163-2013" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2014"><a href="#cb163-2014" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2015"><a href="#cb163-2015" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Topp, E. N., Tscharntke, T., &amp; Loos, J. (2022). <span class="co">[</span><span class="ot">**Fire and landscape context shape plant and butterfly diversity in a South African shrubland**</span><span class="co">](https://onlinelibrary.wiley.com/doi/pdf/10.1111/ddi.13257)</span>. *Diversity and Distributions*, 28(3), 357-371.</span>
-<span id="cb163-2016"><a href="#cb163-2016" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2017"><a href="#cb163-2017" aria-hidden="true" tabindex="-1"></a>"*La riqueza de especies de mariposas es de tres a cuatro veces mayor cuando aumenta el hábitat natural en el paisaje circundante (en un radio de 2 km), mientras que la abundancia de mariposas se asociaba negativamente con el aumento del tiempo transcurrido desde el último incendio.*"</span>
-<span id="cb163-2018"><a href="#cb163-2018" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2019"><a href="#cb163-2019" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "100%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-2020"><a href="#cb163-2020" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2021"><a href="#cb163-2021" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/butterflies.png")</span></span>
-<span id="cb163-2022"><a href="#cb163-2022" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2023"><a href="#cb163-2023" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2024"><a href="#cb163-2024" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2025"><a href="#cb163-2025" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2026"><a href="#cb163-2026" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2027"><a href="#cb163-2027" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2028"><a href="#cb163-2028" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2029"><a href="#cb163-2029" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2030"><a href="#cb163-2030" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb163-2031"><a href="#cb163-2031" aria-hidden="true" tabindex="-1"></a>&lt;font size="5"&gt;Ejercicio 8&lt;/font&gt;</span>
-<span id="cb163-2032"><a href="#cb163-2032" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2033"><a href="#cb163-2033" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2034"><a href="#cb163-2034" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2035"><a href="#cb163-2035" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Intente correr el modelo anterior <span class="in">`lm()`</span> (con una distribución gaussiana), compare los resultados y compruebe los residuos (<span class="in">`plot_model(model_name, type = "diag")`</span>)</span>
-<span id="cb163-2036"><a href="#cb163-2036" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2037"><a href="#cb163-2037" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2038"><a href="#cb163-2038" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2039"><a href="#cb163-2039" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2040"><a href="#cb163-2040" aria-hidden="true" tabindex="-1"></a>Existen muchas otras funciones de distribución y enlace:</span>
-<span id="cb163-2041"><a href="#cb163-2041" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2042"><a href="#cb163-2042" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-2043"><a href="#cb163-2043" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2044"><a href="#cb163-2044" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/link-functions.jpg")</span></span>
-<span id="cb163-2045"><a href="#cb163-2045" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2046"><a href="#cb163-2046" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2047"><a href="#cb163-2047" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2048"><a href="#cb163-2048" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2049"><a href="#cb163-2049" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2050"><a href="#cb163-2050" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb163-2051"><a href="#cb163-2051" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2052"><a href="#cb163-2052" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modelos de efectos variables (modelos mixtos)</span></span>
-<span id="cb163-2053"><a href="#cb163-2053" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2054"><a href="#cb163-2054" aria-hidden="true" tabindex="-1"></a>A veces nuestros conjuntos de datos incluyen estructuras con varios niveles de organización. Por ejemplo, cuando tomamos muestras de varios individuos de diferentes poblaciones. En esos casos, la variación en el nivel estructural superior (poblaciones) podría impedir la detección de patrones en el nivel inferior (individuos).</span>
-<span id="cb163-2055"><a href="#cb163-2055" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2056"><a href="#cb163-2056" aria-hidden="true" tabindex="-1"></a>Vamos a simular algunos datos que se asemejan a ese escenario. Tenemos dos predictores continuos (x1) y una respuesta continua (y). Cada muestra procede de 1 de 8 poblaciones diferentes (poblacion):</span>
-<span id="cb163-2057"><a href="#cb163-2057" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2060"><a href="#cb163-2060" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2061"><a href="#cb163-2061" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;- 1</span></span>
-<span id="cb163-2062"><a href="#cb163-2062" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
-<span id="cb163-2063"><a href="#cb163-2063" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28</span>)</span>
-<span id="cb163-2064"><a href="#cb163-2064" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2065"><a href="#cb163-2065" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de observaciones</span></span>
-<span id="cb163-2066"><a href="#cb163-2066" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb163-2067"><a href="#cb163-2067" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb163-2068"><a href="#cb163-2068" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.3</span></span>
-<span id="cb163-2069"><a href="#cb163-2069" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb163-2070"><a href="#cb163-2070" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb163-2071"><a href="#cb163-2071" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2072"><a href="#cb163-2072" aria-hidden="true" tabindex="-1"></a><span class="co">#  variables aleatorias</span></span>
-<span id="cb163-2073"><a href="#cb163-2073" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb163-2074"><a href="#cb163-2074" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> poblacion <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> b1 <span class="sc">*</span> x1 <span class="sc">+</span> error</span>
-<span id="cb163-2075"><a href="#cb163-2075" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2076"><a href="#cb163-2076" aria-hidden="true" tabindex="-1"></a><span class="co"># add letters</span></span>
-<span id="cb163-2077"><a href="#cb163-2077" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> letters[poblacion <span class="sc">+</span> <span class="dv">1</span>]</span>
-<span id="cb163-2078"><a href="#cb163-2078" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2079"><a href="#cb163-2079" aria-hidden="true" tabindex="-1"></a><span class="co"># create data set</span></span>
-<span id="cb163-2080"><a href="#cb163-2080" aria-hidden="true" tabindex="-1"></a>xy_datos_mixto <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, y, poblacion)</span>
-<span id="cb163-2081"><a href="#cb163-2081" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2082"><a href="#cb163-2082" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xy_datos_mixto, <span class="dv">10</span>)</span>
-<span id="cb163-2083"><a href="#cb163-2083" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2084"><a href="#cb163-2084" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2085"><a href="#cb163-2085" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2086"><a href="#cb163-2086" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2087"><a href="#cb163-2087" aria-hidden="true" tabindex="-1"></a>Podemos explorar la relación entre 'y' y 'x1' con un gráfico:</span>
-<span id="cb163-2088"><a href="#cb163-2088" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2091"><a href="#cb163-2091" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2092"><a href="#cb163-2092" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> xy_datos_mixto, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> </span>
-<span id="cb163-2093"><a href="#cb163-2093" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb163-2094"><a href="#cb163-2094" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2095"><a href="#cb163-2095" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2096"><a href="#cb163-2096" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2097"><a href="#cb163-2097" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2098"><a href="#cb163-2098" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2099"><a href="#cb163-2099" aria-hidden="true" tabindex="-1"></a>¿Puede ver claramente el patrón de asociación entre las dos variables que hemos utilizado para simular los datos? Podemos seguir explorando los datos con un modelo de regresión lineal simple:</span>
-<span id="cb163-2100"><a href="#cb163-2100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2103"><a href="#cb163-2103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2104"><a href="#cb163-2104" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x1, <span class="at">data =</span> xy_datos_mixto))</span>
-<span id="cb163-2105"><a href="#cb163-2105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2106"><a href="#cb163-2106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2107"><a href="#cb163-2107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2108"><a href="#cb163-2108" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2109"><a href="#cb163-2109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2110"><a href="#cb163-2110" aria-hidden="true" tabindex="-1"></a>A pesar de haber simulado un $\beta_1$ distinto de cero, no tenemos ninguna asociación significativa según este modelo y la estimación de $\beta_1$ está muy lejos de la simulada. Esta pobre inferencia se debe a que estamos ignorando una característica importante de nuestros datos, la agrupación de las muestras en "poblaciones".</span>
-<span id="cb163-2111"><a href="#cb163-2111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2112"><a href="#cb163-2112" aria-hidden="true" tabindex="-1"></a>Los modelos de efectos mixtos (también conocidos como modelos multinivel o modelos de efectos variables) pueden ayudarnos a tener en cuenta estas características adicionales, mejorando significativamente nuestro poder de inferencia. Coloreemos cada una de las poblaciones para ver cómo covarían las variables en cada subgrupo de datos:</span>
-<span id="cb163-2113"><a href="#cb163-2113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2116"><a href="#cb163-2116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2117"><a href="#cb163-2117" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> xy_datos_mixto, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y, <span class="at">color =</span> poblacion)) <span class="sc">+</span> </span>
-<span id="cb163-2118"><a href="#cb163-2118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb163-2119"><a href="#cb163-2119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2120"><a href="#cb163-2120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2121"><a href="#cb163-2121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2122"><a href="#cb163-2122" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2123"><a href="#cb163-2123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2124"><a href="#cb163-2124" aria-hidden="true" tabindex="-1"></a>Parece haber un patrón claro de asociación positiva entre x1 e y. El patrón se hace un poco más evidente si mostramos cada población en su propio panel:</span>
-<span id="cb163-2125"><a href="#cb163-2125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2126"><a href="#cb163-2126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width= "100%"}</span></span>
-<span id="cb163-2127"><a href="#cb163-2127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2128"><a href="#cb163-2128" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = xy_datos_mixto, aes(x = x1, y = y, color = poblacion)) +</span></span>
-<span id="cb163-2129"><a href="#cb163-2129" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() +</span></span>
-<span id="cb163-2130"><a href="#cb163-2130" aria-hidden="true" tabindex="-1"></a><span class="in">  facet_wrap( ~ poblacion) +</span></span>
-<span id="cb163-2131"><a href="#cb163-2131" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "lm", se = FALSE) </span></span>
-<span id="cb163-2132"><a href="#cb163-2132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2133"><a href="#cb163-2133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2134"><a href="#cb163-2134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2135"><a href="#cb163-2135" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2136"><a href="#cb163-2136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2137"><a href="#cb163-2137" aria-hidden="true" tabindex="-1"></a>Construyamos un modelo de efectos mixtos utilizando la población como intercepto variable:</span>
-<span id="cb163-2138"><a href="#cb163-2138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2141"><a href="#cb163-2141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2142"><a href="#cb163-2142" aria-hidden="true" tabindex="-1"></a>mix_eff_mod <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> poblacion), <span class="at">data =</span> xy_datos_mixto)</span>
-<span id="cb163-2143"><a href="#cb163-2143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2144"><a href="#cb163-2144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2145"><a href="#cb163-2145" aria-hidden="true" tabindex="-1"></a>Que es equivalente a esto:</span>
-<span id="cb163-2146"><a href="#cb163-2146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2147"><a href="#cb163-2147" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 6&gt;$\hat{Y} \sim_{gausiana} (\beta_{o} + \beta_{grupo}) + \beta_{1} * x_{1}$&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-2148"><a href="#cb163-2148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2149"><a href="#cb163-2149" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2150"><a href="#cb163-2150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2151"><a href="#cb163-2151" aria-hidden="true" tabindex="-1"></a>Podemos ver el resultado del modelo igual que con un modelo <span class="in">`lm()`</span>:</span>
-<span id="cb163-2152"><a href="#cb163-2152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2155"><a href="#cb163-2155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2156"><a href="#cb163-2156" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mix_eff_mod)</span>
-<span id="cb163-2157"><a href="#cb163-2157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2158"><a href="#cb163-2158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2159"><a href="#cb163-2159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2160"><a href="#cb163-2160" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2161"><a href="#cb163-2161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2162"><a href="#cb163-2162" aria-hidden="true" tabindex="-1"></a>El modelo detectó correctamente el patrón simulado y la estimación de $\beta_1$ (<span class="in">`r round(fixef(mix_eff_mod)[2], 3)`</span>) es muy cercana al valor simulado.</span>
-<span id="cb163-2163"><a href="#cb163-2163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2164"><a href="#cb163-2164" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2165"><a href="#cb163-2165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2166"><a href="#cb163-2166" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-warning}</span>
-<span id="cb163-2167"><a href="#cb163-2167" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Caso de estudio&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-2168"><a href="#cb163-2168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2169"><a href="#cb163-2169" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2170"><a href="#cb163-2170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2171"><a href="#cb163-2171" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Araya-Salas M, P González-Gómez, K Wojczulanis-Jakubas, V López III &amp; T Wright. 2018. <span class="co">[</span><span class="ot">**Spatial memory is as important as weapon and body size for territorial ownership in a lekking hummingbird**</span><span class="co">](https://www.nature.com/articles/s41598-018-20441-x)</span>. *Scientific Reports*. 13, e0189969</span>
-<span id="cb163-2172"><a href="#cb163-2172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2173"><a href="#cb163-2173" aria-hidden="true" tabindex="-1"></a>"*... el tamaño corporal mostró una correlación negativa con la frecuencia baja del canto.*"</span>
-<span id="cb163-2174"><a href="#cb163-2174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2175"><a href="#cb163-2175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-2176"><a href="#cb163-2176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2177"><a href="#cb163-2177" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/lbh_song_size.png")</span></span>
-<span id="cb163-2178"><a href="#cb163-2178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2179"><a href="#cb163-2179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2180"><a href="#cb163-2180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2181"><a href="#cb163-2181" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2182"><a href="#cb163-2182" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2183"><a href="#cb163-2183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2184"><a href="#cb163-2184" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2185"><a href="#cb163-2185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2186"><a href="#cb163-2186" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-success}</span>
-<span id="cb163-2187"><a href="#cb163-2187" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2188"><a href="#cb163-2188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2189"><a href="#cb163-2189" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Interpretación del modelo&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-2190"><a href="#cb163-2190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2191"><a href="#cb163-2191" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2192"><a href="#cb163-2192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2193"><a href="#cb163-2193" aria-hidden="true" tabindex="-1"></a>Cuadro con los coeficientes (estimados):</span>
-<span id="cb163-2194"><a href="#cb163-2194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2195"><a href="#cb163-2195" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo= FALSE}</span></span>
-<span id="cb163-2196"><a href="#cb163-2196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2197"><a href="#cb163-2197" aria-hidden="true" tabindex="-1"></a><span class="in">summ_mix_eff_mod &lt;- summary(mix_eff_mod)</span></span>
-<span id="cb163-2198"><a href="#cb163-2198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2199"><a href="#cb163-2199" aria-hidden="true" tabindex="-1"></a><span class="in">summ_mix_eff_mod$coefficients</span></span>
-<span id="cb163-2200"><a href="#cb163-2200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2201"><a href="#cb163-2201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2202"><a href="#cb163-2202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2203"><a href="#cb163-2203" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2204"><a href="#cb163-2204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2205"><a href="#cb163-2205" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo encontró que $\beta_1$ (el tamaño de efecto de 'x1') es <span class="in">`r summ_mix_eff_mod$coefficients[2, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_mix_eff_mod$coefficients[2, 5]`</span>)</span>
-<span id="cb163-2206"><a href="#cb163-2206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2207"><a href="#cb163-2207" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los valores simulados de los parámetros de regresión pueden compararse con el resumen del modelo <span class="in">`lmer()`</span> para tener una idea de la precisión del modelo:</span>
-<span id="cb163-2208"><a href="#cb163-2208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2209"><a href="#cb163-2209" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\beta_1$ se fijó en <span class="in">`r b1`</span> y se estimó como <span class="in">`r round(summ_mix_eff_mod$coefficients[2, 1], 3)`</span>.</span>
-<span id="cb163-2210"><a href="#cb163-2210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2211"><a href="#cb163-2211" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La varianza del intercepto para cada población fue de <span class="in">`r var(ranef(mix_eff_mod)$poblacion[,1])`</span> y la desviación estándar de <span class="in">`r sd(ranef(mix_eff_mod)$poblacion[,1])`</span></span>
-<span id="cb163-2212"><a href="#cb163-2212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2213"><a href="#cb163-2213" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los interceptos estimados para cada población son:</span>
-<span id="cb163-2214"><a href="#cb163-2214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2217"><a href="#cb163-2217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2218"><a href="#cb163-2218" aria-hidden="true" tabindex="-1"></a><span class="fu">ranef</span>(mix_eff_mod)<span class="sc">$</span>poblacion</span>
-<span id="cb163-2219"><a href="#cb163-2219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2220"><a href="#cb163-2220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2221"><a href="#cb163-2221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2222"><a href="#cb163-2222" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2223"><a href="#cb163-2223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2224"><a href="#cb163-2224" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Podemos compararlos con los promedios para cada población en los datos:</span>
-<span id="cb163-2225"><a href="#cb163-2225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2228"><a href="#cb163-2228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb163-2229"><a href="#cb163-2229" aria-hidden="true" tabindex="-1"></a><span class="co"># sumar interceptos por poblacion a el intercepto total</span></span>
-<span id="cb163-2230"><a href="#cb163-2230" aria-hidden="true" tabindex="-1"></a>interceptos <span class="ot">&lt;-</span> <span class="fu">ranef</span>(mix_eff_mod)<span class="sc">$</span>poblacion <span class="sc">+</span> <span class="fu">fixef</span>(mix_eff_mod)[<span class="dv">1</span>]</span>
-<span id="cb163-2231"><a href="#cb163-2231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2232"><a href="#cb163-2232" aria-hidden="true" tabindex="-1"></a><span class="co"># calcular los promedios por poblacion en los datos </span></span>
-<span id="cb163-2233"><a href="#cb163-2233" aria-hidden="true" tabindex="-1"></a>prom_pobs <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(y <span class="sc">~</span> poblacion, xy_datos_mixto, mean)</span>
-<span id="cb163-2234"><a href="#cb163-2234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2235"><a href="#cb163-2235" aria-hidden="true" tabindex="-1"></a><span class="co"># unir</span></span>
-<span id="cb163-2236"><a href="#cb163-2236" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(interceptos, <span class="at">prom_pobs=</span> prom_pobs[,<span class="dv">2</span>])</span>
-<span id="cb163-2237"><a href="#cb163-2237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2238"><a href="#cb163-2238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2239"><a href="#cb163-2239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2240"><a href="#cb163-2240" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2241"><a href="#cb163-2241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2242"><a href="#cb163-2242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La varianza entre los niveles del factor aleatorio (<span class="in">`poblacion`</span>) es de <span class="in">`r var(ranef(mix_eff_mod)$poblacion[,1])`</span> y la desviación estándar de <span class="in">`r sd(ranef(mix_eff_mod)$poblacion[,1])`</span></span>
-<span id="cb163-2243"><a href="#cb163-2243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2244"><a href="#cb163-2244" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2245"><a href="#cb163-2245" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2246"><a href="#cb163-2246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2247"><a href="#cb163-2247" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2248"><a href="#cb163-2248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2249"><a href="#cb163-2249" aria-hidden="true" tabindex="-1"></a><span class="fu">### La paradoja de Simpson</span></span>
-<span id="cb163-2250"><a href="#cb163-2250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2251"><a href="#cb163-2251" aria-hidden="true" tabindex="-1"></a>La paradoja de Simpson es un fenómeno en estadística en el que una tendencia aparece en varios grupos de datos pero desaparece o se invierte cuando se combinan los grupos. Se ha utilizado para ilustrar el tipo de resultados engañosos que puede generar el ignorar la estructura en los datos y las relaciones causales entre variables.</span>
-<span id="cb163-2252"><a href="#cb163-2252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2253"><a href="#cb163-2253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-2254"><a href="#cb163-2254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2255"><a href="#cb163-2255" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/simpsons_paradox.gif")</span></span>
-<span id="cb163-2256"><a href="#cb163-2256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2257"><a href="#cb163-2257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2258"><a href="#cb163-2258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2259"><a href="#cb163-2259" aria-hidden="true" tabindex="-1"></a>&lt;font size="3"&gt;Tomado de wikipedia&lt;/font&gt;</span>
-<span id="cb163-2260"><a href="#cb163-2260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2261"><a href="#cb163-2261" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2262"><a href="#cb163-2262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2263"><a href="#cb163-2263" aria-hidden="true" tabindex="-1"></a>La estructura de los datos debido a observaciones pertenecientes al mismo grupo puede ser tomada en cuenta usando el grupo como un factor aleatorio, tal y como se hizo en el ejemplo anterior.</span>
-<span id="cb163-2264"><a href="#cb163-2264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2265"><a href="#cb163-2265" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2266"><a href="#cb163-2266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2267"><a href="#cb163-2267" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb163-2268"><a href="#cb163-2268" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;b&gt;&lt;font size="5"&gt;Modelos lineales como abordaje estadístico estándar &lt;/font&gt;&lt;/b&gt;&lt;/center&gt;</span>
-<span id="cb163-2269"><a href="#cb163-2269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2270"><a href="#cb163-2270" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "40%", echo = FALSE, fig.align= "center"}</span></span>
-<span id="cb163-2271"><a href="#cb163-2271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2272"><a href="#cb163-2272" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/swiss_knife.png")</span></span>
-<span id="cb163-2273"><a href="#cb163-2273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2274"><a href="#cb163-2274" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb163-2275"><a href="#cb163-2275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2276"><a href="#cb163-2276" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 5&gt;$\hat{Y} \sim_{función\ de\ enlace} (\beta_{o} + \beta_{grupo}) + \beta_{1} * x_{1} + \cdots + \beta_{n} * x_{n}$&lt;/font&gt;&lt;/center&gt;</span>
-<span id="cb163-2277"><a href="#cb163-2277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2278"><a href="#cb163-2278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Este modelo básico incluye una función de enlace que cuando es gausiana (i.e. normal) equivale a un modelo lineal y cuando no, a un modelo generalizado</span>
-<span id="cb163-2279"><a href="#cb163-2279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2280"><a href="#cb163-2280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cuando el $\beta_{grupo}$ es diferente entre grupos (i.e. cuando el intercepto difiere entre grupos) es un modelo mixto con intercepto variable (i.e. aleatorio)</span>
-<span id="cb163-2281"><a href="#cb163-2281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2282"><a href="#cb163-2282" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2283"><a href="#cb163-2283" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb163-2284"><a href="#cb163-2284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2285"><a href="#cb163-2285" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2286"><a href="#cb163-2286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2287"><a href="#cb163-2287" aria-hidden="true" tabindex="-1"></a>Este manual solo pretende sugerir un abordaje estadístico centrado en los modelos de regresión desde el cual se pueden llevar a cabo adecuadamente la mayoría de los análisis estadísticos que usamos en biología. **El manual no tiene como objetivo explicar en detalle las particularidades de los modelos generalizados y mixtos**. Note que estos modelos, principalmente los mixtos, pueden adaptarse a otras estructuras de datos mas complejas no cubiertas aquí, como lo son las pendientes aleatorias, pendientes e interceptos aleatorios, estructuras de correlación (i.e. autocorrelación espacial o temporal, pedigrís o árboles filogenéticos), medidas repetidas y el uso de pseudoreplicas, entre otras.</span>
-<span id="cb163-2288"><a href="#cb163-2288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2289"><a href="#cb163-2289" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2290"><a href="#cb163-2290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2291"><a href="#cb163-2291" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb163-2292"><a href="#cb163-2292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2293"><a href="#cb163-2293" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
-<span id="cb163-2294"><a href="#cb163-2294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2295"><a href="#cb163-2295" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Richard McElreath's Statistical Rethinking book</span><span class="co">](https://github.com/rmcelreath/stat_rethinking_2022)</span></span>
-<span id="cb163-2296"><a href="#cb163-2296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2297"><a href="#cb163-2297" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's rbinom -- Simulate Binomial or Bernoulli trials</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rbinom/)</span></span>
-<span id="cb163-2298"><a href="#cb163-2298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2299"><a href="#cb163-2299" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's rnorm -- selecting values from a normal distribution</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rnorm/)</span></span>
-<span id="cb163-2300"><a href="#cb163-2300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2301"><a href="#cb163-2301" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's exp -- Simulating Exponential Distributions</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/rexp/)</span></span>
-<span id="cb163-2302"><a href="#cb163-2302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2303"><a href="#cb163-2303" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Simulating data in R</span><span class="co">](https://aosmith.rbind.io/2018/08/29/getting-started-simulating-data/)</span></span>
-<span id="cb163-2304"><a href="#cb163-2304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2305"><a href="#cb163-2305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spake, R., Bowler, D. E., Callaghan, C. T., Blowes, S. A., Doncaster, C. P., Antao, L. H., ... &amp; Chase, J. M. (2023). <span class="co">[</span><span class="ot">Understanding ‘it depends’ in ecology: a guide to hypothesising, visualising and interpreting statistical interactions</span><span class="co">](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939)</span>. Biological Reviews.</span>
-<span id="cb163-2306"><a href="#cb163-2306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2307"><a href="#cb163-2307" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb163-2308"><a href="#cb163-2308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2309"><a href="#cb163-2309" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb163-2310"><a href="#cb163-2310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2311"><a href="#cb163-2311" aria-hidden="true" tabindex="-1"></a><span class="fu"># Información de la sesión {.unnumbered .unlisted}</span></span>
-<span id="cb163-2312"><a href="#cb163-2312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2313"><a href="#cb163-2313" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
-<span id="cb163-2314"><a href="#cb163-2314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2315"><a href="#cb163-2315" aria-hidden="true" tabindex="-1"></a><span class="in">sessionInfo()</span></span>
-<span id="cb163-2316"><a href="#cb163-2316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-2317"><a href="#cb163-2317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1925"><a href="#cb163-1925" aria-hidden="true" tabindex="-1"></a><span class="co">#generar variables</span></span>
+<span id="cb163-1926"><a href="#cb163-1926" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> n, <span class="at">lambda =</span> <span class="fl">6.5</span>) <span class="co"># lambda = tasa promedio de exitos </span></span>
+<span id="cb163-1927"><a href="#cb163-1927" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, , <span class="fu">length</span>(y))</span>
+<span id="cb163-1928"><a href="#cb163-1928" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> (<span class="fu">log</span>(y) <span class="sc">-</span> b0 <span class="sc">-</span> b2 <span class="sc">*</span> x2) <span class="sc">/</span> b1</span>
+<span id="cb163-1929"><a href="#cb163-1929" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1930"><a href="#cb163-1930" aria-hidden="true" tabindex="-1"></a><span class="co"># crear data frame</span></span>
+<span id="cb163-1931"><a href="#cb163-1931" aria-hidden="true" tabindex="-1"></a>xy_datos_pois <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, x2, y)</span>
+<span id="cb163-1932"><a href="#cb163-1932" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1933"><a href="#cb163-1933" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xy_datos_pois)</span>
+<span id="cb163-1934"><a href="#cb163-1934" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1935"><a href="#cb163-1935" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1936"><a href="#cb163-1936" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1937"><a href="#cb163-1937" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1938"><a href="#cb163-1938" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1939"><a href="#cb163-1939" aria-hidden="true" tabindex="-1"></a>También grafiquemos 'x1' *vs* 'y':</span>
+<span id="cb163-1940"><a href="#cb163-1940" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1943"><a href="#cb163-1943" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-1944"><a href="#cb163-1944" aria-hidden="true" tabindex="-1"></a><span class="co"># graficar</span></span>
+<span id="cb163-1945"><a href="#cb163-1945" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(xy_datos_pois, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> </span>
+<span id="cb163-1946"><a href="#cb163-1946" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
+<span id="cb163-1947"><a href="#cb163-1947" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1948"><a href="#cb163-1948" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1949"><a href="#cb163-1949" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1950"><a href="#cb163-1950" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1951"><a href="#cb163-1951" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1952"><a href="#cb163-1952" aria-hidden="true" tabindex="-1"></a>La relación no parece muy lineal ni la varianza parece ser constante a través de 'x1'.</span>
+<span id="cb163-1953"><a href="#cb163-1953" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1954"><a href="#cb163-1954" aria-hidden="true" tabindex="-1"></a>Podemos relajar el requisito de la distribución normal con GLMs. <span class="in">`glm()`</span> es una función básica de R que nos ayuda a hacer el truco. Para este ejemplo la distribución más apropiada es *Poisson*. Esto se puede establecer en el argumento <span class="sc">\`</span>family' así:</span>
+<span id="cb163-1955"><a href="#cb163-1955" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1958"><a href="#cb163-1958" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-1959"><a href="#cb163-1959" aria-hidden="true" tabindex="-1"></a>glm_pois  <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> xy_datos_pois, <span class="at">family =</span> <span class="fu">poisson</span>())</span>
+<span id="cb163-1960"><a href="#cb163-1960" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1961"><a href="#cb163-1961" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1962"><a href="#cb163-1962" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1963"><a href="#cb163-1963" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1964"><a href="#cb163-1964" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1965"><a href="#cb163-1965" aria-hidden="true" tabindex="-1"></a>Que es equivalente a esto:</span>
+<span id="cb163-1966"><a href="#cb163-1966" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1967"><a href="#cb163-1967" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 6&gt;$\hat{Y} \sim_{poisson} \beta_{o} + \beta_{1} * x_{1} + \beta_{2} * x_{2}$&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-1968"><a href="#cb163-1968" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1969"><a href="#cb163-1969" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1970"><a href="#cb163-1970" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1971"><a href="#cb163-1971" aria-hidden="true" tabindex="-1"></a>Como puede ver el único argumento extra comparado con <span class="in">`lm()`</span> es <span class="in">`family`</span>. El resto es simplemente la "fórmula" y los "datos" con los que ya estamos familiarizados. Así que, de nuevo, podemos aprovechar nuestros conocimientos sobre los modelos lineales para extenderlos a estructuras de datos más complejas.</span>
+<span id="cb163-1972"><a href="#cb163-1972" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1973"><a href="#cb163-1973" aria-hidden="true" tabindex="-1"></a>También necesitamos ejecutar <span class="in">`summary()`</span> para obtener el resultado del modelo:</span>
+<span id="cb163-1974"><a href="#cb163-1974" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1977"><a href="#cb163-1977" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-1978"><a href="#cb163-1978" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_pois)</span>
+<span id="cb163-1979"><a href="#cb163-1979" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1980"><a href="#cb163-1980" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-1981"><a href="#cb163-1981" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1982"><a href="#cb163-1982" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1983"><a href="#cb163-1983" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1984"><a href="#cb163-1984" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1985"><a href="#cb163-1985" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1986"><a href="#cb163-1986" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-success}</span>
+<span id="cb163-1987"><a href="#cb163-1987" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1988"><a href="#cb163-1988" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1989"><a href="#cb163-1989" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Interpretación del modelo&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-1990"><a href="#cb163-1990" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1991"><a href="#cb163-1991" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-1992"><a href="#cb163-1992" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1993"><a href="#cb163-1993" aria-hidden="true" tabindex="-1"></a>Cuadro de los coeficientes (estimados):</span>
+<span id="cb163-1994"><a href="#cb163-1994" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1995"><a href="#cb163-1995" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo= FALSE}</span></span>
+<span id="cb163-1996"><a href="#cb163-1996" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1997"><a href="#cb163-1997" aria-hidden="true" tabindex="-1"></a><span class="in">summ_glm_pois &lt;- summary(glm_pois)</span></span>
+<span id="cb163-1998"><a href="#cb163-1998" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-1999"><a href="#cb163-1999" aria-hidden="true" tabindex="-1"></a><span class="in">summ_glm_pois$coefficients</span></span>
+<span id="cb163-2000"><a href="#cb163-2000" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2001"><a href="#cb163-2001" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2002"><a href="#cb163-2002" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo nos dice que $\beta_1$ (el tamaño de efecto de 'x1') es <span class="in">`r summ_glm_pois$coefficients[2, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_glm_pois$coefficients[2, 4]`</span>). Esto se interpreta en realidad como que un aumento de 1 unidad de 'x1' resulta en 'y' (tasa) en un factor de exp(<span class="in">`r summ_glm_pois$coefficients[2, 1]`</span>) = <span class="in">`r exp(summ_glm_pois$coefficients[2, 1])`</span>.</span>
+<span id="cb163-2003"><a href="#cb163-2003" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2004"><a href="#cb163-2004" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo también nos dice que $\beta_2$ (el tamaño de efecto de 'x2') es <span class="in">`r summ_glm_pois$coefficients[3, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_glm_pois$coefficients[3, 4]`</span>). Esto significa que un aumento en 1 unidad de 'x2' resulta en 'y' (tasa) en un factor de exp(<span class="in">`r summ_glm_pois$coefficients[3, 1]`</span>) = <span class="in">`r exp(summ_glm_pois$coefficients[3, 1])`</span>.</span>
+<span id="cb163-2005"><a href="#cb163-2005" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2006"><a href="#cb163-2006" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2007"><a href="#cb163-2007" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2008"><a href="#cb163-2008" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2009"><a href="#cb163-2009" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-warning}</span>
+<span id="cb163-2010"><a href="#cb163-2010" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Caso de estudio&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-2011"><a href="#cb163-2011" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2012"><a href="#cb163-2012" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2013"><a href="#cb163-2013" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2014"><a href="#cb163-2014" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Topp, E. N., Tscharntke, T., &amp; Loos, J. (2022). <span class="co">[</span><span class="ot">**Fire and landscape context shape plant and butterfly diversity in a South African shrubland**</span><span class="co">](https://onlinelibrary.wiley.com/doi/pdf/10.1111/ddi.13257)</span>. *Diversity and Distributions*, 28(3), 357-371.</span>
+<span id="cb163-2015"><a href="#cb163-2015" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2016"><a href="#cb163-2016" aria-hidden="true" tabindex="-1"></a>"*La riqueza de especies de mariposas es de tres a cuatro veces mayor cuando aumenta el hábitat natural en el paisaje circundante (en un radio de 2 km), mientras que la abundancia de mariposas se asociaba negativamente con el aumento del tiempo transcurrido desde el último incendio.*"</span>
+<span id="cb163-2017"><a href="#cb163-2017" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2018"><a href="#cb163-2018" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "100%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-2019"><a href="#cb163-2019" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2020"><a href="#cb163-2020" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/butterflies.png")</span></span>
+<span id="cb163-2021"><a href="#cb163-2021" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2022"><a href="#cb163-2022" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2023"><a href="#cb163-2023" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2024"><a href="#cb163-2024" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2025"><a href="#cb163-2025" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2026"><a href="#cb163-2026" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2027"><a href="#cb163-2027" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2028"><a href="#cb163-2028" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2029"><a href="#cb163-2029" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb163-2030"><a href="#cb163-2030" aria-hidden="true" tabindex="-1"></a>&lt;font size="5"&gt;Ejercicio 8&lt;/font&gt;</span>
+<span id="cb163-2031"><a href="#cb163-2031" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2032"><a href="#cb163-2032" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2033"><a href="#cb163-2033" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2034"><a href="#cb163-2034" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Intente correr el modelo anterior <span class="in">`lm()`</span> (con una distribución gaussiana), compare los resultados y compruebe los residuos (<span class="in">`plot_model(model_name, type = "diag")`</span>)</span>
+<span id="cb163-2035"><a href="#cb163-2035" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2036"><a href="#cb163-2036" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2037"><a href="#cb163-2037" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2038"><a href="#cb163-2038" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2039"><a href="#cb163-2039" aria-hidden="true" tabindex="-1"></a>Existen muchas otras funciones de distribución y enlace:</span>
+<span id="cb163-2040"><a href="#cb163-2040" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2041"><a href="#cb163-2041" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-2042"><a href="#cb163-2042" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2043"><a href="#cb163-2043" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/link-functions.jpg")</span></span>
+<span id="cb163-2044"><a href="#cb163-2044" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2045"><a href="#cb163-2045" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2046"><a href="#cb163-2046" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2047"><a href="#cb163-2047" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2048"><a href="#cb163-2048" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2049"><a href="#cb163-2049" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb163-2050"><a href="#cb163-2050" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2051"><a href="#cb163-2051" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modelos de efectos variables (modelos mixtos)</span></span>
+<span id="cb163-2052"><a href="#cb163-2052" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2053"><a href="#cb163-2053" aria-hidden="true" tabindex="-1"></a>A veces nuestros conjuntos de datos incluyen estructuras con varios niveles de organización. Por ejemplo, cuando tomamos muestras de varios individuos de diferentes poblaciones. En esos casos, la variación en el nivel estructural superior (poblaciones) podría impedir la detección de patrones en el nivel inferior (individuos).</span>
+<span id="cb163-2054"><a href="#cb163-2054" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2055"><a href="#cb163-2055" aria-hidden="true" tabindex="-1"></a>Vamos a simular algunos datos que se asemejan a ese escenario. Tenemos dos predictores continuos (x1) y una respuesta continua (y). Cada muestra procede de 1 de 8 poblaciones diferentes (poblacion):</span>
+<span id="cb163-2056"><a href="#cb163-2056" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2059"><a href="#cb163-2059" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2060"><a href="#cb163-2060" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;- 1</span></span>
+<span id="cb163-2061"><a href="#cb163-2061" aria-hidden="true" tabindex="-1"></a><span class="co"># definir semilla</span></span>
+<span id="cb163-2062"><a href="#cb163-2062" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28</span>)</span>
+<span id="cb163-2063"><a href="#cb163-2063" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2064"><a href="#cb163-2064" aria-hidden="true" tabindex="-1"></a><span class="co"># numero de observaciones</span></span>
+<span id="cb163-2065"><a href="#cb163-2065" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb163-2066"><a href="#cb163-2066" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb163-2067"><a href="#cb163-2067" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.3</span></span>
+<span id="cb163-2068"><a href="#cb163-2068" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb163-2069"><a href="#cb163-2069" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb163-2070"><a href="#cb163-2070" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2071"><a href="#cb163-2071" aria-hidden="true" tabindex="-1"></a><span class="co">#  variables aleatorias</span></span>
+<span id="cb163-2072"><a href="#cb163-2072" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb163-2073"><a href="#cb163-2073" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> poblacion <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> b1 <span class="sc">*</span> x1 <span class="sc">+</span> error</span>
+<span id="cb163-2074"><a href="#cb163-2074" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2075"><a href="#cb163-2075" aria-hidden="true" tabindex="-1"></a><span class="co"># add letters</span></span>
+<span id="cb163-2076"><a href="#cb163-2076" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> letters[poblacion <span class="sc">+</span> <span class="dv">1</span>]</span>
+<span id="cb163-2077"><a href="#cb163-2077" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2078"><a href="#cb163-2078" aria-hidden="true" tabindex="-1"></a><span class="co"># create data set</span></span>
+<span id="cb163-2079"><a href="#cb163-2079" aria-hidden="true" tabindex="-1"></a>xy_datos_mixto <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, y, poblacion)</span>
+<span id="cb163-2080"><a href="#cb163-2080" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2081"><a href="#cb163-2081" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xy_datos_mixto, <span class="dv">10</span>)</span>
+<span id="cb163-2082"><a href="#cb163-2082" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2083"><a href="#cb163-2083" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2084"><a href="#cb163-2084" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2085"><a href="#cb163-2085" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2086"><a href="#cb163-2086" aria-hidden="true" tabindex="-1"></a>Podemos explorar la relación entre 'y' y 'x1' con un gráfico:</span>
+<span id="cb163-2087"><a href="#cb163-2087" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2090"><a href="#cb163-2090" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2091"><a href="#cb163-2091" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> xy_datos_mixto, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> </span>
+<span id="cb163-2092"><a href="#cb163-2092" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb163-2093"><a href="#cb163-2093" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2094"><a href="#cb163-2094" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2095"><a href="#cb163-2095" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2096"><a href="#cb163-2096" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2097"><a href="#cb163-2097" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2098"><a href="#cb163-2098" aria-hidden="true" tabindex="-1"></a>¿Puede ver claramente el patrón de asociación entre las dos variables que hemos utilizado para simular los datos? Podemos seguir explorando los datos con un modelo de regresión lineal simple:</span>
+<span id="cb163-2099"><a href="#cb163-2099" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2102"><a href="#cb163-2102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2103"><a href="#cb163-2103" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x1, <span class="at">data =</span> xy_datos_mixto))</span>
+<span id="cb163-2104"><a href="#cb163-2104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2105"><a href="#cb163-2105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2106"><a href="#cb163-2106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2107"><a href="#cb163-2107" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2108"><a href="#cb163-2108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2109"><a href="#cb163-2109" aria-hidden="true" tabindex="-1"></a>A pesar de haber simulado un $\beta_1$ distinto de cero, no tenemos ninguna asociación significativa según este modelo y la estimación de $\beta_1$ está muy lejos de la simulada. Esta pobre inferencia se debe a que estamos ignorando una característica importante de nuestros datos, la agrupación de las muestras en "poblaciones".</span>
+<span id="cb163-2110"><a href="#cb163-2110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2111"><a href="#cb163-2111" aria-hidden="true" tabindex="-1"></a>Los modelos de efectos mixtos (también conocidos como modelos multinivel o modelos de efectos variables) pueden ayudarnos a tener en cuenta estas características adicionales, mejorando significativamente nuestro poder de inferencia. Coloreemos cada una de las poblaciones para ver cómo covarían las variables en cada subgrupo de datos:</span>
+<span id="cb163-2112"><a href="#cb163-2112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2115"><a href="#cb163-2115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2116"><a href="#cb163-2116" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> xy_datos_mixto, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y, <span class="at">color =</span> poblacion)) <span class="sc">+</span> </span>
+<span id="cb163-2117"><a href="#cb163-2117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb163-2118"><a href="#cb163-2118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2119"><a href="#cb163-2119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2120"><a href="#cb163-2120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2121"><a href="#cb163-2121" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2122"><a href="#cb163-2122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2123"><a href="#cb163-2123" aria-hidden="true" tabindex="-1"></a>Parece haber un patrón claro de asociación positiva entre x1 e y. El patrón se hace un poco más evidente si mostramos cada población en su propio panel:</span>
+<span id="cb163-2124"><a href="#cb163-2124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2125"><a href="#cb163-2125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width= "100%"}</span></span>
+<span id="cb163-2126"><a href="#cb163-2126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2127"><a href="#cb163-2127" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = xy_datos_mixto, aes(x = x1, y = y, color = poblacion)) +</span></span>
+<span id="cb163-2128"><a href="#cb163-2128" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() +</span></span>
+<span id="cb163-2129"><a href="#cb163-2129" aria-hidden="true" tabindex="-1"></a><span class="in">  facet_wrap( ~ poblacion) +</span></span>
+<span id="cb163-2130"><a href="#cb163-2130" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "lm", se = FALSE) </span></span>
+<span id="cb163-2131"><a href="#cb163-2131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2132"><a href="#cb163-2132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2133"><a href="#cb163-2133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2134"><a href="#cb163-2134" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2135"><a href="#cb163-2135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2136"><a href="#cb163-2136" aria-hidden="true" tabindex="-1"></a>Construyamos un modelo de efectos mixtos utilizando la población como intercepto variable:</span>
+<span id="cb163-2137"><a href="#cb163-2137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2140"><a href="#cb163-2140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2141"><a href="#cb163-2141" aria-hidden="true" tabindex="-1"></a>mix_eff_mod <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> poblacion), <span class="at">data =</span> xy_datos_mixto)</span>
+<span id="cb163-2142"><a href="#cb163-2142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2143"><a href="#cb163-2143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2144"><a href="#cb163-2144" aria-hidden="true" tabindex="-1"></a>Que es equivalente a esto:</span>
+<span id="cb163-2145"><a href="#cb163-2145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2146"><a href="#cb163-2146" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 6&gt;$\hat{Y} \sim_{gausiana} (\beta_{o} + \beta_{grupo}) + \beta_{1} * x_{1}$&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-2147"><a href="#cb163-2147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2148"><a href="#cb163-2148" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2149"><a href="#cb163-2149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2150"><a href="#cb163-2150" aria-hidden="true" tabindex="-1"></a>Podemos ver el resultado del modelo igual que con un modelo <span class="in">`lm()`</span>:</span>
+<span id="cb163-2151"><a href="#cb163-2151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2154"><a href="#cb163-2154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2155"><a href="#cb163-2155" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mix_eff_mod)</span>
+<span id="cb163-2156"><a href="#cb163-2156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2157"><a href="#cb163-2157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2158"><a href="#cb163-2158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2159"><a href="#cb163-2159" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2160"><a href="#cb163-2160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2161"><a href="#cb163-2161" aria-hidden="true" tabindex="-1"></a>El modelo detectó correctamente el patrón simulado y la estimación de $\beta_1$ (<span class="in">`r round(fixef(mix_eff_mod)[2], 3)`</span>) es muy cercana al valor simulado.</span>
+<span id="cb163-2162"><a href="#cb163-2162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2163"><a href="#cb163-2163" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2164"><a href="#cb163-2164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2165"><a href="#cb163-2165" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-warning}</span>
+<span id="cb163-2166"><a href="#cb163-2166" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Caso de estudio&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-2167"><a href="#cb163-2167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2168"><a href="#cb163-2168" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2169"><a href="#cb163-2169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2170"><a href="#cb163-2170" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Araya-Salas M, P González-Gómez, K Wojczulanis-Jakubas, V López III &amp; T Wright. 2018. <span class="co">[</span><span class="ot">**Spatial memory is as important as weapon and body size for territorial ownership in a lekking hummingbird**</span><span class="co">](https://www.nature.com/articles/s41598-018-20441-x)</span>. *Scientific Reports*. 13, e0189969</span>
+<span id="cb163-2171"><a href="#cb163-2171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2172"><a href="#cb163-2172" aria-hidden="true" tabindex="-1"></a>"*... el tamaño corporal mostró una correlación negativa con la frecuencia baja del canto.*"</span>
+<span id="cb163-2173"><a href="#cb163-2173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2174"><a href="#cb163-2174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-2175"><a href="#cb163-2175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2176"><a href="#cb163-2176" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/lbh_song_size.png")</span></span>
+<span id="cb163-2177"><a href="#cb163-2177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2178"><a href="#cb163-2178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2179"><a href="#cb163-2179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2180"><a href="#cb163-2180" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2181"><a href="#cb163-2181" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2182"><a href="#cb163-2182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2183"><a href="#cb163-2183" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2184"><a href="#cb163-2184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2185"><a href="#cb163-2185" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-success}</span>
+<span id="cb163-2186"><a href="#cb163-2186" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2187"><a href="#cb163-2187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2188"><a href="#cb163-2188" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size="5"&gt;&lt;b&gt;Interpretación del modelo&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-2189"><a href="#cb163-2189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2190"><a href="#cb163-2190" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2191"><a href="#cb163-2191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2192"><a href="#cb163-2192" aria-hidden="true" tabindex="-1"></a>Cuadro con los coeficientes (estimados):</span>
+<span id="cb163-2193"><a href="#cb163-2193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2194"><a href="#cb163-2194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo= FALSE}</span></span>
+<span id="cb163-2195"><a href="#cb163-2195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2196"><a href="#cb163-2196" aria-hidden="true" tabindex="-1"></a><span class="in">summ_mix_eff_mod &lt;- summary(mix_eff_mod)</span></span>
+<span id="cb163-2197"><a href="#cb163-2197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2198"><a href="#cb163-2198" aria-hidden="true" tabindex="-1"></a><span class="in">summ_mix_eff_mod$coefficients</span></span>
+<span id="cb163-2199"><a href="#cb163-2199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2200"><a href="#cb163-2200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2201"><a href="#cb163-2201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2202"><a href="#cb163-2202" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2203"><a href="#cb163-2203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2204"><a href="#cb163-2204" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El modelo encontró que $\beta_1$ (el tamaño de efecto de 'x1') es <span class="in">`r summ_mix_eff_mod$coefficients[2, 1]`</span> y que es significativamente diferente de 0 (p = <span class="in">`r summ_mix_eff_mod$coefficients[2, 5]`</span>)</span>
+<span id="cb163-2205"><a href="#cb163-2205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2206"><a href="#cb163-2206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los valores simulados de los parámetros de regresión pueden compararse con el resumen del modelo <span class="in">`lmer()`</span> para tener una idea de la precisión del modelo:</span>
+<span id="cb163-2207"><a href="#cb163-2207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2208"><a href="#cb163-2208" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$\beta_1$ se fijó en <span class="in">`r b1`</span> y se estimó como <span class="in">`r round(summ_mix_eff_mod$coefficients[2, 1], 3)`</span>.</span>
+<span id="cb163-2209"><a href="#cb163-2209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2210"><a href="#cb163-2210" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La varianza del intercepto para cada población fue de <span class="in">`r var(ranef(mix_eff_mod)$poblacion[,1])`</span> y la desviación estándar de <span class="in">`r sd(ranef(mix_eff_mod)$poblacion[,1])`</span></span>
+<span id="cb163-2211"><a href="#cb163-2211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2212"><a href="#cb163-2212" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los interceptos estimados para cada población son:</span>
+<span id="cb163-2213"><a href="#cb163-2213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2216"><a href="#cb163-2216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2217"><a href="#cb163-2217" aria-hidden="true" tabindex="-1"></a><span class="fu">ranef</span>(mix_eff_mod)<span class="sc">$</span>poblacion</span>
+<span id="cb163-2218"><a href="#cb163-2218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2219"><a href="#cb163-2219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2220"><a href="#cb163-2220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2221"><a href="#cb163-2221" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2222"><a href="#cb163-2222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2223"><a href="#cb163-2223" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Podemos compararlos con los promedios para cada población en los datos:</span>
+<span id="cb163-2224"><a href="#cb163-2224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2227"><a href="#cb163-2227" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb163-2228"><a href="#cb163-2228" aria-hidden="true" tabindex="-1"></a><span class="co"># sumar interceptos por poblacion a el intercepto total</span></span>
+<span id="cb163-2229"><a href="#cb163-2229" aria-hidden="true" tabindex="-1"></a>interceptos <span class="ot">&lt;-</span> <span class="fu">ranef</span>(mix_eff_mod)<span class="sc">$</span>poblacion <span class="sc">+</span> <span class="fu">fixef</span>(mix_eff_mod)[<span class="dv">1</span>]</span>
+<span id="cb163-2230"><a href="#cb163-2230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2231"><a href="#cb163-2231" aria-hidden="true" tabindex="-1"></a><span class="co"># calcular los promedios por poblacion en los datos </span></span>
+<span id="cb163-2232"><a href="#cb163-2232" aria-hidden="true" tabindex="-1"></a>prom_pobs <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(y <span class="sc">~</span> poblacion, xy_datos_mixto, mean)</span>
+<span id="cb163-2233"><a href="#cb163-2233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2234"><a href="#cb163-2234" aria-hidden="true" tabindex="-1"></a><span class="co"># unir</span></span>
+<span id="cb163-2235"><a href="#cb163-2235" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(interceptos, <span class="at">prom_pobs=</span> prom_pobs[,<span class="dv">2</span>])</span>
+<span id="cb163-2236"><a href="#cb163-2236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2237"><a href="#cb163-2237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2238"><a href="#cb163-2238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2239"><a href="#cb163-2239" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2240"><a href="#cb163-2240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2241"><a href="#cb163-2241" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La varianza entre los niveles del factor aleatorio (<span class="in">`poblacion`</span>) es de <span class="in">`r var(ranef(mix_eff_mod)$poblacion[,1])`</span> y la desviación estándar de <span class="in">`r sd(ranef(mix_eff_mod)$poblacion[,1])`</span></span>
+<span id="cb163-2242"><a href="#cb163-2242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2243"><a href="#cb163-2243" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2244"><a href="#cb163-2244" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2245"><a href="#cb163-2245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2246"><a href="#cb163-2246" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2247"><a href="#cb163-2247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2248"><a href="#cb163-2248" aria-hidden="true" tabindex="-1"></a><span class="fu">### La paradoja de Simpson</span></span>
+<span id="cb163-2249"><a href="#cb163-2249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2250"><a href="#cb163-2250" aria-hidden="true" tabindex="-1"></a>La paradoja de Simpson es un fenómeno en estadística en el que una tendencia aparece en varios grupos de datos pero desaparece o se invierte cuando se combinan los grupos. Se ha utilizado para ilustrar el tipo de resultados engañosos que puede generar el ignorar la estructura en los datos y las relaciones causales entre variables.</span>
+<span id="cb163-2251"><a href="#cb163-2251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2252"><a href="#cb163-2252" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "80%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-2253"><a href="#cb163-2253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2254"><a href="#cb163-2254" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/simpsons_paradox.gif")</span></span>
+<span id="cb163-2255"><a href="#cb163-2255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2256"><a href="#cb163-2256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2257"><a href="#cb163-2257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2258"><a href="#cb163-2258" aria-hidden="true" tabindex="-1"></a>&lt;font size="3"&gt;Tomado de wikipedia&lt;/font&gt;</span>
+<span id="cb163-2259"><a href="#cb163-2259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2260"><a href="#cb163-2260" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2261"><a href="#cb163-2261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2262"><a href="#cb163-2262" aria-hidden="true" tabindex="-1"></a>La estructura de los datos debido a observaciones pertenecientes al mismo grupo puede ser tomada en cuenta usando el grupo como un factor aleatorio, tal y como se hizo en el ejemplo anterior.</span>
+<span id="cb163-2263"><a href="#cb163-2263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2264"><a href="#cb163-2264" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2265"><a href="#cb163-2265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2266"><a href="#cb163-2266" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb163-2267"><a href="#cb163-2267" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;b&gt;&lt;font size="5"&gt;Modelos lineales como abordaje estadístico estándar &lt;/font&gt;&lt;/b&gt;&lt;/center&gt;</span>
+<span id="cb163-2268"><a href="#cb163-2268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2269"><a href="#cb163-2269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = "40%", echo = FALSE, fig.align= "center"}</span></span>
+<span id="cb163-2270"><a href="#cb163-2270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2271"><a href="#cb163-2271" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("./images/swiss_knife.png")</span></span>
+<span id="cb163-2272"><a href="#cb163-2272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2273"><a href="#cb163-2273" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb163-2274"><a href="#cb163-2274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2275"><a href="#cb163-2275" aria-hidden="true" tabindex="-1"></a>&lt;center&gt;&lt;font size = 5&gt;$\hat{Y} \sim_{función\ de\ enlace} (\beta_{o} + \beta_{grupo}) + \beta_{1} * x_{1} + \cdots + \beta_{n} * x_{n}$&lt;/font&gt;&lt;/center&gt;</span>
+<span id="cb163-2276"><a href="#cb163-2276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2277"><a href="#cb163-2277" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Este modelo básico incluye una función de enlace que cuando es gausiana (i.e. normal) equivale a un modelo lineal y cuando no, a un modelo generalizado</span>
+<span id="cb163-2278"><a href="#cb163-2278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2279"><a href="#cb163-2279" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cuando el $\beta_{grupo}$ es diferente entre grupos (i.e. cuando el intercepto difiere entre grupos) es un modelo mixto con intercepto variable (i.e. aleatorio)</span>
+<span id="cb163-2280"><a href="#cb163-2280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2281"><a href="#cb163-2281" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2282"><a href="#cb163-2282" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb163-2283"><a href="#cb163-2283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2284"><a href="#cb163-2284" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2285"><a href="#cb163-2285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2286"><a href="#cb163-2286" aria-hidden="true" tabindex="-1"></a>Este manual solo pretende sugerir un abordaje estadístico centrado en los modelos de regresión desde el cual se pueden llevar a cabo adecuadamente la mayoría de los análisis estadísticos que usamos en biología. **El manual no tiene como objetivo explicar en detalle las particularidades de los modelos generalizados y mixtos**. Note que estos modelos, principalmente los mixtos, pueden adaptarse a otras estructuras de datos mas complejas no cubiertas aquí, como lo son las pendientes aleatorias, pendientes e interceptos aleatorios, estructuras de correlación (i.e. autocorrelación espacial o temporal, pedigrís o árboles filogenéticos), medidas repetidas y el uso de pseudoreplicas, entre otras.</span>
+<span id="cb163-2287"><a href="#cb163-2287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2288"><a href="#cb163-2288" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2289"><a href="#cb163-2289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2290"><a href="#cb163-2290" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb163-2291"><a href="#cb163-2291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2292"><a href="#cb163-2292" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb163-2293"><a href="#cb163-2293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2294"><a href="#cb163-2294" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Richard McElreath's Statistical Rethinking book</span><span class="co">](https://github.com/rmcelreath/stat_rethinking_2022)</span></span>
+<span id="cb163-2295"><a href="#cb163-2295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2296"><a href="#cb163-2296" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's rbinom -- Simulate Binomial or Bernoulli trials</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rbinom/)</span></span>
+<span id="cb163-2297"><a href="#cb163-2297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2298"><a href="#cb163-2298" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's rnorm -- selecting values from a normal distribution</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rnorm/)</span></span>
+<span id="cb163-2299"><a href="#cb163-2299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2300"><a href="#cb163-2300" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R's exp -- Simulating Exponential Distributions</span><span class="co">](https://www.programmingr.com/examples/neat-tricks/sample-r-function/rexp/)</span></span>
+<span id="cb163-2301"><a href="#cb163-2301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2302"><a href="#cb163-2302" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Simulating data in R</span><span class="co">](https://aosmith.rbind.io/2018/08/29/getting-started-simulating-data/)</span></span>
+<span id="cb163-2303"><a href="#cb163-2303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2304"><a href="#cb163-2304" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Spake, R., Bowler, D. E., Callaghan, C. T., Blowes, S. A., Doncaster, C. P., Antao, L. H., ... &amp; Chase, J. M. (2023). <span class="co">[</span><span class="ot">Understanding 'it depends' in ecology: a guide to hypothesising, visualising and interpreting statistical interactions</span><span class="co">](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12939)</span>. Biological Reviews.</span>
+<span id="cb163-2305"><a href="#cb163-2305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2306"><a href="#cb163-2306" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb163-2307"><a href="#cb163-2307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2308"><a href="#cb163-2308" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb163-2309"><a href="#cb163-2309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2310"><a href="#cb163-2310" aria-hidden="true" tabindex="-1"></a><span class="fu"># Información de la sesión {.unnumbered .unlisted}</span></span>
+<span id="cb163-2311"><a href="#cb163-2311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2312"><a href="#cb163-2312" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
+<span id="cb163-2313"><a href="#cb163-2313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2314"><a href="#cb163-2314" aria-hidden="true" tabindex="-1"></a><span class="in">sessionInfo()</span></span>
+<span id="cb163-2315"><a href="#cb163-2315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-2316"><a href="#cb163-2316" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">22 de febrero de 2024</p>
+      <p class="date">23 de febrero de 2024</p>
     </div>
   </div>
   
@@ -402,8 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><font size="5">Ejercicio 1</font></p>
 <ul>
 <li><p>¿Qué hacen las funciones <code>rbinom()</code> y <code>rexp()</code>?</p></li>
-<li><p>Ejecutela y haga histogramas de sus resultados</p></li>
-<li><p>¿Qué hacen los argumentos ‘mean’ y ‘sd’ en <code>rnorm()</code>? Juege con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación</p></li>
+<li><p>Ejecútela y haga histogramas de sus resultados</p></li>
+<li><p>¿Qué hacen los argumentos ‘mean’ y ‘sd’ en <code>rnorm()</code>? Juegue con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación</p></li>
 </ul>
 </div>
 <p>&nbsp;</p>
@@ -867,7 +867,7 @@ Levels: a b</code></pre>
 <li><p>Intenta explorar el Teorema del Límite Central como en el caso anterior, pero esta vez utilizando:</p>
 <ol type="1">
 <li>Una distribución exponencial (<code>rexp()</code>)</li>
-<li>Una distribución binomial (<code>rbinom()</code>)</li>
+<li>Una distribución log-normal (<code>rlnorm()</code>)</li>
 </ol></li>
 </ul>
 <p>&nbsp;</p>
@@ -1207,7 +1207,7 @@ Residual standard error: 0.926 on 49 degrees of freedom</code></pre>
 <p>&nbsp;</p>
 <ul>
 <li><p>Cambie el argumento ‘mean’ en la llamada de la función “rnorm()` en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</p></li>
-<li><p>Cambia el argumento <code>sd</code> en la llamada a la función <code>rnorm()</code> (<a href="#cb53-8">línea 130</a>) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</p></li>
+<li><p>Cambia el argumento <code>sd</code> en la llamada a la función <code>rnorm()</code> por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</p></li>
 </ul>
 </div>
 <p>&nbsp;</p>
@@ -1613,7 +1613,7 @@ x1            2.8900    0.44249  6.5311 3.8537e-08</code></pre>
 <ul>
 <li><p>Aumente el tamaño de la muestra (<code>n</code>) a 1000 o más</p></li>
 <li><p>¿Cómo cambiaron los estimados del tamaño de efecto (<span class="math inline">\(\beta\)</span>)?</p></li>
-<li><p>¿Cómo cambió el error estándar del tamaño de efecto?</p></li>
+<li><p>¿Cómo cambió los intervalos de confianza del tamaño de efecto?</p></li>
 <li><p>Ahora cambie <code>n</code> a 15 y compruebe de nuevo las estimaciones del modelo (esta vez compruebe también el valor p)</p></li>
 </ul>
 </div>
@@ -2204,7 +2204,7 @@ x1b           1.8140    0.84160  2.1554 3.6172e-02</code></pre>
 <p><font size="5">Ejercicio 6</font></p>
 <p>&nbsp;</p>
 <ul>
-<li>Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código <a href="#cb99-1">arriba</a> para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.</li>
+<li>Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código arriba para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.</li>
 </ul>
 </div>
 <hr>
@@ -3983,9 +3983,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-180"><a href="#cb163-180" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-181"><a href="#cb163-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Qué hacen las funciones <span class="in">`rbinom()`</span> y <span class="in">`rexp()`</span>?</span>
 <span id="cb163-182"><a href="#cb163-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-183"><a href="#cb163-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ejecutela y haga histogramas de sus resultados</span>
+<span id="cb163-183"><a href="#cb163-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ejecútela y haga histogramas de sus resultados</span>
 <span id="cb163-184"><a href="#cb163-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-185"><a href="#cb163-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Qué hacen los argumentos 'mean' y 'sd' en <span class="in">`rnorm()`</span>? Juege con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación</span>
+<span id="cb163-185"><a href="#cb163-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Qué hacen los argumentos 'mean' y 'sd' en <span class="in">`rnorm()`</span>? Juegue con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación</span>
 <span id="cb163-186"><a href="#cb163-186" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb163-187"><a href="#cb163-187" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-188"><a href="#cb163-188" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
@@ -4303,7 +4303,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-532"><a href="#cb163-532" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Intenta explorar el Teorema del Límite Central como en el caso anterior, pero esta vez utilizando:</span>
 <span id="cb163-533"><a href="#cb163-533" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-534"><a href="#cb163-534" aria-hidden="true" tabindex="-1"></a><span class="ss">    1.  </span>Una distribución exponencial (<span class="in">`rexp()`</span>)</span>
-<span id="cb163-535"><a href="#cb163-535" aria-hidden="true" tabindex="-1"></a><span class="ss">    2.  </span>Una distribución binomial (<span class="in">`rbinom()`</span>)</span>
+<span id="cb163-535"><a href="#cb163-535" aria-hidden="true" tabindex="-1"></a><span class="ss">    2.  </span>Una distribución log-normal (<span class="in">`rlnorm()`</span>)</span>
 <span id="cb163-536"><a href="#cb163-536" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-537"><a href="#cb163-537" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb163-538"><a href="#cb163-538" aria-hidden="true" tabindex="-1"></a></span>
@@ -4598,7 +4598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-841"><a href="#cb163-841" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-842"><a href="#cb163-842" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambie el argumento 'mean' en la llamada de la función "rnorm()<span class="sc">\`</span> en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes</span>
 <span id="cb163-843"><a href="#cb163-843" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-844"><a href="#cb163-844" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambia el argumento <span class="in">`sd`</span> en la llamada a la función <span class="in">`rnorm()`</span> (<span class="co">[</span><span class="ot">línea 130</span><span class="co">](#cb53-8)</span>) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</span>
+<span id="cb163-844"><a href="#cb163-844" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cambia el argumento <span class="in">`sd`</span> en la llamada a la función <span class="in">`rnorm()`</span> por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes</span>
 <span id="cb163-845"><a href="#cb163-845" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb163-846"><a href="#cb163-846" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-847"><a href="#cb163-847" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
@@ -4854,7 +4854,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-1113"><a href="#cb163-1113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1114"><a href="#cb163-1114" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Cómo cambiaron los estimados del tamaño de efecto ($\beta$)?</span>
 <span id="cb163-1115"><a href="#cb163-1115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1116"><a href="#cb163-1116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Cómo cambió el error estándar del tamaño de efecto?</span>
+<span id="cb163-1116"><a href="#cb163-1116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>¿Cómo cambió los intervalos de confianza del tamaño de efecto?</span>
 <span id="cb163-1117"><a href="#cb163-1117" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1118"><a href="#cb163-1118" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ahora cambie <span class="in">`n`</span> a 15 y compruebe de nuevo las estimaciones del modelo (esta vez compruebe también el valor p)</span>
 <span id="cb163-1119"><a href="#cb163-1119" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -5255,7 +5255,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb163-1534"><a href="#cb163-1534" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1535"><a href="#cb163-1535" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb163-1536"><a href="#cb163-1536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-1537"><a href="#cb163-1537" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código <span class="co">[</span><span class="ot">arriba</span><span class="co">](#cb99-1)</span> para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.</span>
+<span id="cb163-1537"><a href="#cb163-1537" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código arriba para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.</span>
 <span id="cb163-1538"><a href="#cb163-1538" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb163-1539"><a href="#cb163-1539" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb163-1540"><a href="#cb163-1540" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>

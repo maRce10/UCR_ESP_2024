@@ -174,9 +174,9 @@ round(x = v1, digits = 0)
 
 -   ¿Qué hacen las funciones `rbinom()` y `rexp()`?
 
--   Ejecutela y haga histogramas de sus resultados
+-   Ejecútela y haga histogramas de sus resultados
 
--   ¿Qué hacen los argumentos 'mean' y 'sd' en `rnorm()`? Juege con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación
+-   ¿Qué hacen los argumentos 'mean' y 'sd' en `rnorm()`? Juegue con diferentes valores y comprueba el histograma para hacerse una idea de su efecto en la simulación
 :::
 
  
@@ -507,7 +507,7 @@ mean(bimod_pop)
 -   Intenta explorar el Teorema del Límite Central como en el caso anterior, pero esta vez utilizando:
 
     1.  Una distribución exponencial (`rexp()`)
-    2.  Una distribución binomial (`rbinom()`)
+    2.  Una distribución log-normal (`rlnorm()`)
 
  
 
@@ -809,7 +809,7 @@ knitr::include_graphics("./images/leukocytes.png")
 
 -   Cambie el argumento 'mean' en la llamada de la función "rnorm()\` en la simulación para el modelo de solo intercepto un valor distinto de 0 y observe cómo cambian los valores en la tabla de coeficientes
 
--   Cambia el argumento `sd` en la llamada a la función `rnorm()` ([línea 130](#cb53-8)) por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes
+-   Cambia el argumento `sd` en la llamada a la función `rnorm()` por un valor más alto y observe cómo cambian los valores en la tabla de coeficientes
 :::
 
  
@@ -1073,7 +1073,7 @@ knitr::include_graphics("./images/duet_reg.png")
 
 -   ¿Cómo cambiaron los estimados del tamaño de efecto ($\beta$)?
 
--   ¿Cómo cambió el error estándar del tamaño de efecto?
+-   ¿Cómo cambió los intervalos de confianza del tamaño de efecto?
 
 -   Ahora cambie `n` a 15 y compruebe de nuevo las estimaciones del modelo (esta vez compruebe también el valor p)
 :::
@@ -1483,7 +1483,7 @@ knitr::include_graphics("./images/daggers_lbh.png")
 
  
 
--   Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código [arriba](#cb99-1) para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.
+-   Los datos desbalanceados cuando hay categorías (es decir, algunas categorías tienen muchas más observaciones que otras) pueden ser problemáticos para la inferencia estadística. Modifique el código arriba para simular un juego de datos muy desbalanceado y compruebe la precisión del modelo.
 :::
 
 ------------------------------------------------------------------------
